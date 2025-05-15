@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERMINAL ABISMO :: dmesg</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        .terminal {
+            padding: 20px;
+            height: 100vh;
+            overflow-y: auto;
+            background-color: #000;
+        }
+        .prompt {
+            color: #0f0;
+            font-weight: bold;
+        }
+        .command {
+            color: #0af;
+        }
+        .kernel {
+            color: #f80;
+        }
+        .error {
+            color: #f00;
+        }
+        .warning {
+            color: #ff0;
+        }
+        .timestamp {
+            color: #888;
+        }
+        .cursor {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div id="output">
+            <pre>
+<span class="timestamp">[    0.000000]</span> <span class="kernel">Inicializando universo...</span> OK
+<span class="timestamp">[    0.000001]</span> <span class="kernel">Verificando paradoxos...</span> <span class="warning">WARNING: ENTROPIA INVERTIDA DETECTADA</span>
+<span class="timestamp">[    1.342567]</span> <span class="error">ERRO: Seu cérebro está em /dev/null (Operação não permitida)</span>
+<span class="timestamp">[    2.718281]</span> <span class="kernel">Mídia detectada:</span> Vampyroteuthis infernalis (Driver: mítico/simbólico)
+<span class="timestamp">[    3.141592]</span> <span class="warning">Sistema de arquivos corrompido:</span> /memória/lúdica contém setores fantasmas
+<span class="timestamp">[    4.202347]</span> <span class="warning">WARNING: Usuário tentando acessar nível 0 de consciência (ROOT negado)</span>
+<span class="timestamp">[    5.666666]</span> <span class="error">ALERTA: Plasma semântico consumindo 99.9% da CPU existencial</span>
+<span class="timestamp">[    6.626070]</span> <span class="kernel">Kernel panic:</span> Linguagem não encontrada. Executando ritual de shutdown arquetípico...
+<span class="timestamp">[    6.626071]</span> <span class="kernel">---[ end Kernel panic - tentando sincronizar ]---</span>
+            </pre>
+        </div>
+        <div class="prompt">
+            <span>abismo</span> <span class="cursor">$</span>
+        </div>
+    </div>
+
+    <script>
+        // Rolagem automática para o final
+        window.onload = function() {
+            var terminal = document.querySelector('.terminal');
+            terminal.scrollTop = terminal.scrollHeight;
+        };
+    </script>
+</body>
+</html>
