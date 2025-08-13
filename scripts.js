@@ -12,6 +12,7 @@ async function loadTexts() {
         responses.continue = doc.getElementById('continue').textContent.trim();
         responses.elabore = doc.getElementById('elabore').textContent.trim();
         responses.conclua = doc.getElementById('conclua').textContent.trim();
+        responses.codigos = doc.getElementById('codigos').textContent.trim();
         
         console.log('Textos carregados!', responses);
     } catch (error) {
@@ -20,6 +21,7 @@ async function loadTexts() {
         responses.continue = 'Texto padrão (continue)';
         responses.elabore = 'Texto padrão (elabore)';
         responses.conclua = 'Texto padrão (conclua)';
+        responses.codigos = 'Texto padrão (codigos)';
     }
 }
 
