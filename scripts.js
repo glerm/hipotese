@@ -40,7 +40,7 @@ commandInput.addEventListener('keydown', function(e) {
         if (responses[command]) {
             output += `<div>${responses[command]}</div>`;
         } else if (command) {
-            output += `<div>Digite: "continue", "elabore" ou "conclua"</div>`;
+            output += `<div>Digite: "continue", "elabore", "codigos" ou "conclua"</div>`;
         }
         
         terminalOutput.innerHTML += output;
