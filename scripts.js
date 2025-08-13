@@ -22,6 +22,7 @@ async function loadTexts() {
         responses.elabore = 'Texto padrão (elabore)';
         responses.conclua = 'Texto padrão (conclua)';
         responses.codigos = 'Texto padrão (codigos)';
+        responses.rascunhos = 'Texto padrão (rascunhos)';
     }
 }
 
@@ -40,7 +41,7 @@ commandInput.addEventListener('keydown', function(e) {
         if (responses[command]) {
             output += `<div>${responses[command]}</div>`;
         } else if (command) {
-            output += `<div>Digite: "continue", "elabore", "codigos" ou "conclua"</div>`;
+            output += `<div>Digite: "continue", "elabore", "rascunhos", "codigos" ou "conclua"</div>`;
         }
         
         terminalOutput.innerHTML += output;
