@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lance de Dados</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .instructions {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            max-width: 600px;
+            text-align: center;
+        }
+        canvas {
+            border: 2px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Lance de Dados</h1>
+    
+    <div class="instructions">
+        <p>Clique em qualquer lugar para fazer as letras caírem com efeito de gravidade. Pressione qualquer tecla para reiniciar a animação.</p>
+    </div>
+
+    <script>
+        let textoOriginal = "JAMAIS MESMO ATIRADO EM CIRCUNSTÂNCIAS ETERNAS DO FUNDO DUM NAUFRÁGIO Porque o Abismo Branco se expõe furioso sob uma inclinação desesperadamente plana d' asa a sua recaída prévia dum mal de se erguer no voo cobrindo os impulsos cortando rente os ímpetos no âmago se resume a sombra que se afunda nas profundas nessa alternativa vela para adaptar a tal envergadura as suas horríveis profundas como o arcaboiço duma construção que balança dum lado para o outro O MESTRE emerge inferindo dessa conflagração que se como uma ameaça o único Número que não pode hesita cadáver descartado em lugar de jogar como um velho maníaco a partida em nome das marés um naufrágio assim livre dos antigos cálculos esquecido o manobrar com a idade outrora ele empunhava o leme a seus pés num horizonte unânime prepara se agita e se envolve no punho que o ligará ao destino dos ventos ser um outro Espírito para o Lançar na tempestade e redobrar a divisão e passar altivo pelo braço o segredo que encerra invadiu o comandante correndo pela barba submersa vindo do homem sem nau insignificante onde será vão ancestralmente abrir ou não a mão crispada além duma cabeça inútil legada em desaparição a alguém ambíguo imemorial ulterior demónio nos seus lugares do nada induz o ancião a essa conjunção suprema com a probabilidade o tal da sombra pueril acariciada e polida aparada e lavada amaciada pela onda e afastada dos ossos duros perdidos em bocejos nascido dum descuido jogando o mar por antepassado ou o antepassado contra o mar numa sorte ociosa São núpcias da qual a ilusão é uma vela solta obcecada com o fantasma dum gesto que oscila até cair na loucura";
+        let letras = [];
+        let gravidade = 0.2;
+        let chao;
+        let margem = 20; // Margem lateral
+
+        function setup() {
+            createCanvas(800, 400);
+            chao = height - 20;
+            textSize(15);
+            textAlign(LEFT, TOP);
+            
+            // Inicializa as letras na posição original
+            reiniciarTexto();
+        }
+
+        function draw() {
+            background(240);
+            
+            // Desenha o chão
+            fill(200);
+            rect(0, chao, width, height - chao);
+            fill(100);
+            
+            // Atualiza e desenha as letras
+            for (let i = 0; i < letras.length; i++) {
+                let letra = letras[i];
+                
+                if (letra.caindo) {
+                    // Aplica gravidade
+                    letra.velocidade += gravidade;
+                    letra.y += letra.velocidade;
+                    
+                    // Verifica colisão com o chão
+                    if (letra.y + textSize()/2 > chao) {
+                        letra.y = chao - textSize()/2;
+                        letra.velocidade *= -0.6; // Rebote com amortecimento
+                        
+                        // Para a letra se a velocidade for muito baixa
+                        if (abs(letra.velocidade) < 0.5) {
+                            letra.velocidade = 0;
+                        }
+                    }
+                }
+                
+                // Desenha a letra
+                text(letra.caractere, letra.x, letra.y);
+            }
+        }
+
+        function mousePressed() {
+            // Faz todas as letras começarem a cair
+            for (let letra of letras) {
+                if (!letra.caindo) {
+                    letra.caindo = true;
+                    // Adiciona um pouco de velocidade horizontal aleatória
+                    letra.velocidade = random(-1, 1);
+                }
+            }
+        }
+
+        function reiniciarTexto() {
+            letras = [];
+            let x = margem;
+            let y = 10; // Posição inicial Y
+            let linhaAtual = "";
+            let palavras = textoOriginal.split(" ");
+            
+            for (let palavra of palavras) {
+                // Verifica se a palavra cabe na linha atual
+                let larguraPalavra = textWidth(palavra + " ");
+                let larguraLinhaAtual = textWidth(linhaAtual);
+                
+                if (larguraLinhaAtual + larguraPalavra > width - 2 * margem) {
+                    // Quebra de linha - processa a linha atual
+                    processarLinha(linhaAtual.trim(), x, y);
+                    y += textSize() * 1.5; // Nova linha
+                    linhaAtual = ""; // Reseta a linha
+                }
+                
+                linhaAtual += palavra + " ";
+            }
+            
+            // Processa a última linha
+            if (linhaAtual.trim().length > 0) {
+                processarLinha(linhaAtual.trim(), x, y);
+            }
+        }
+
+        function processarLinha(textoLinha, xInicial, y) {
+            let x = xInicial;
+            
+            for (let i = 0; i < textoLinha.length; i++) {
+                let caractere = textoLinha[i];
+                let larguraCaractere = textWidth(caractere);
+                
+                letras.push({
+                    caractere: caractere,
+                    x: x,
+                    y: y,
+                    velocidade: 0,
+                    caindo: false,
+                    linhaOriginal: y // Guarda a posição Y original para referência
+                });
+                
+                x += larguraCaractere;
+            }
+        }
+
+        // Reinicia quando qualquer tecla é pressionada
+        function keyPressed() {
+            reiniciarTexto();
+            return false; // Previne comportamento padrão do navegador
+        }
+    </script>
+</body>
+</html>
