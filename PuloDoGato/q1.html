@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Q1 - Expressões Numéricas | Matemática</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .voltar-index {
+            display: inline-block;
+            margin-top: 15px;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .voltar-index:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            background: #ecf0f1;
+            padding: 12px 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .subquestoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: #333;
+            display: block;
+            border: 1px solid #e0e0e0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+
+        .card .numero {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .card .expressao {
+            font-size: 0.85em;
+            color: #555;
+            font-family: monospace;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .card .status {
+            display: inline-block;
+            font-size: 0.8em;
+            background: #27ae60;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .card .expressao {
+                white-space: normal;
+                word-break: break-all;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📐 Questão 1 - Expressões Numéricas</h1>
+            <p>7 subquestões para resolver passo a passo</p>
+            <a href="index.html" class="voltar-index">← Voltar para o índice geral</a>
+        </div>
+
+        <div class="info">
+           
+            <span><strong>Trimestre:</strong> I</span>
+            <span><strong>Data:</strong> 27/04/2026</span>
+            <span><strong>Componente:</strong> Matemática</span>
+        </div>
+
+        <div class="subquestoes-grid">
+            <!-- Subquestão 1 -->
+            <a href="q1-1.html" class="card">
+                <div class="numero">01</div>
+                <div class="expressao">
+                    \(\{4 + 2 \cdot [32 - \frac{1}{4} \cdot (\frac{2}{3} - \frac{1}{8}) + 2] + 16\} + 1\)
+                </div>
+                <span class="status">✅ Ver resolução</span>
+            </a>
+
+            <!-- Subquestão 2 -->
+            <a href="q1-2.html" class="card">
+                <div class="numero">02</div>
+                <div class="expressao">
+                    \(3 \cdot \{-1 + 12 \cdot [-13 + 4 \cdot (1 - \frac{1}{3}) - 1] - 1\}\)
+                </div>
+                <span class="status">✅ Ver resolução</span>
+            </a>
+
+            <!-- Subquestão 3 -->
+            <a href="q1-3.html" class="card">
+                <div class="numero">03</div>
+                <div class="expressao">
+                    \([(\frac{1}{2} \cdot \frac{1}{3}) + \frac{4}{6}]\)
+                </div>
+                <span class="status">✅ Ver resolução</span>
+            </a>
+
+            <!-- Subquestão 4 -->
+            <a href="q1-4.html" class="card">
+                <div class="numero">04</div>
+                <div class="expressao">
+                    \([(1 + \frac{1}{2})^2 - 2]\)
+                </div>
+                <span class="status">✅ Ver resolução</span>
+            </a>
+
+            <!-- Subquestão 5 -->
+            <a href="q1-5.html" class="card">
+                <div class="numero">05</div>
+                <div class="expressao">
+                    \(\frac{1}{5} + \{ [\frac{4}{9} + (\frac{1}{2} \cdot \frac{2}{4} - \frac{1}{9})] \}\)
+                </div>
+                <span class="status">✅ Ver resolução</span>
+            </a>
+
+            <!-- Subquestão 6 -->
+            <a href="q1-6.html" class="card">
+                <div class="numero">06</div>
+                <div class="expressao">
+                    \((\frac{2}{5} \cdot \frac{5}{3}) \div \frac{2}{3}\)
+                </div>
+                <span class="status">✅ Ver resolução</span>
+            </a>
+
+            <!-- Subquestão 7 -->
+            <a href="q1-7.html" class="card">
+                <div class="numero">07</div>
+                <div class="expressao">
+                    \((4 - \frac{4}{5}) + (9 + \frac{1}{3})\)
+                </div>
+                <span class="status">✅ Ver resolução</span>
+            </a>
+        </div>
+
+        <footer>
+            📘 Clique em cada card para ver a resolução completa passo a passo.<br>
+            Matemática - 7º Ano | Ensino Fundamental Anos Finais
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Q2 - Problema da Padaria | Matemática</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 25px 30px;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .header .links {
+            margin-top: 15px;
+        }
+
+        .header .links a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .header .links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .conteudo {
+            padding: 30px;
+        }
+
+        .enunciado {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #3498db;
+            font-size: 1.1em;
+        }
+
+        .enunciado p {
+            margin: 10px 0;
+        }
+
+        .passo {
+            background: #fafafa;
+            padding: 18px;
+            margin: 18px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .passo:hover {
+            background: #f5f7fa;
+        }
+
+        .passo strong {
+            color: #2c3e50;
+            font-size: 1.05em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .math {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .resposta-final {
+            background: #eafaf1;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 25px;
+            border: 2px solid #27ae60;
+        }
+
+        .resposta-final h2 {
+            color: #1e8449;
+            margin-bottom: 10px;
+        }
+
+        .resposta-final .math {
+            font-size: 1.8em;
+            background: transparent;
+            padding: 0;
+        }
+
+        .dica {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #f39c12;
+        }
+
+        footer {
+            background: #ecf0f1;
+            text-align: center;
+            padding: 15px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .conteudo {
+                padding: 15px;
+            }
+            .enunciado {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📐 Questão 2 - Problema da Padaria</h1>
+            <p>Fração do saco de farinha que restou</p>
+            <div class="links">
+                <a href="index.html">← Voltar ao índice geral</a>
+                <a href="q1.html">← Questão 1</a>
+                <a href="q3.html">Próxima questão (Q3) →</a>
+            </div>
+        </div>
+
+        <div class="conteudo">
+            <!-- Enunciado -->
+            <div class="enunciado">
+                <p><strong>📖 Enunciado:</strong></p>
+                <p>Em uma padaria, uma confeiteira utilizou metade de um saco de farinha para preparar uma fornada de pães. Mais tarde, usou 1/3 do saco cheio para fazer uma torta. Considerando a quantidade total de farinha que havia no início, qual fração ainda restava no saco após essas duas utilizações?</p>
+            </div>
+
+            <!-- Passo 1 -->
+            <div class="passo">
+                <strong>🔹 Passo 1 – Representar a quantidade total</strong>
+                <p>O saco cheio representa a unidade (1 inteiro).</p>
+                <div class="math">
+                    \[
+                    \text{Total} = 1
+                    \]
+                </div>
+            </div>
+
+            <!-- Passo 2 -->
+            <div class="passo">
+                <strong>🔹 Passo 2 – Primeira utilização (pães)</strong>
+                <p>Usou metade do saco:</p>
+                <div class="math">
+                    \[
+                    \text{Usado} = \frac{1}{2}
+                    \]
+                </div>
+                <p>O que restou após a primeira vez:</p>
+                <div class="math">
+                    \[
+                    1 - \frac{1}{2} = \frac{1}{2}
+                    \]
+                </div>
+            </div>
+
+            <!-- Passo 3 -->
+            <div class="passo">
+                <strong>🔹 Passo 3 – Segunda utilização (torta)</strong>
+                <p>Atenção! Ela usou \( \frac{1}{3} \) <strong>do saco cheio</strong> (do total original), não do que restou.</p>
+                <p>Isso significa que usou mais \( \frac{1}{3} \) da quantidade total inicial.</p>
+                <div class="math">
+                    \[
+                    \text{Usado na torta} = \frac{1}{3}
+                    \]
+                </div>
+            </div>
+
+            <!-- Passo 4 -->
+            <div class="passo">
+                <strong>🔹 Passo 4 – Calcular o que resta após as duas utilizações</strong>
+                <p>Do que restou após os pães (\( \frac{1}{2} \)), subtraímos o usado na torta (\( \frac{1}{3} \)):</p>
+                <div class="math">
+                    \[
+                    \frac{1}{2} - \frac{1}{3}
+                    \]
+                </div>
+                <p>Para subtrair frações, encontramos o denominador comum (MMC de 2 e 3 = 6):</p>
+                <div class="math">
+                    \[
+                    \frac{1}{2} = \frac{3}{6}, \quad \frac{1}{3} = \frac{2}{6}
+                    \]
+                </div>
+                <div class="math">
+                    \[
+                    \frac{3}{6} - \frac{2}{6} = \frac{1}{6}
+                    \]
+                </div>
+            </div>
+
+            <!-- Resposta final -->
+            <div class="resposta-final">
+                <h2>✅ RESPOSTA FINAL</h2>
+                <div class="math">
+                    \[
+                    \boxed{\frac{1}{6}}
+                    \]
+                </div>
+                <p>Após as duas utilizações, restava <strong>um sexto</strong> do saco de farinha.</p>
+            </div>
+
+            <!-- Dica -->
+            <div class="dica">
+                <strong>💡 Dica importante:</strong> Sempre preste atenção se a fração usada é <strong>do total original</strong> ou <strong>do que restou</strong>. Neste problema, o segundo uso foi "1/3 do saco cheio" (total original), não do restante. Muitos estudantes erram ao subtrair diretamente \( \frac{1}{2} + \frac{1}{3} = \frac{5}{6} \) e dizer que resta \( \frac{1}{6} \) — nesse caso, por coincidência, o resultado é o mesmo, mas o raciocínio conceitual é diferente! O correto é entender que se usou \( \frac{1}{2} \) e depois \( \frac{1}{3} \) do total, o total usado foi \( \frac{5}{6} \), restando \( \frac{1}{6} \). Ambos os métodos levam ao mesmo resultado aqui, mas nem sempre acontece.
+            </div>
+
+            <!-- Resumo em tabela -->
+            <div class="passo">
+                <strong>📊 Resumo visual:</strong>
+                <div class="math">
+                    \[
+                    \text{Total} = 1 = \frac{6}{6}
+                    \]
+                    \[
+                    \text{Usado} = \frac{1}{2} + \frac{1}{3} = \frac{3}{6} + \frac{2}{6} = \frac{5}{6}
+                    \]
+                    \[
+                    \text{Restante} = \frac{6}{6} - \frac{5}{6} = \frac{1}{6}
+                    \]
+                </div>
+            </div>
+        </div>
+
+      
+    </div>
+</body>
+</html>

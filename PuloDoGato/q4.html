@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Q4 - Expressão com Raiz e Potência | Matemática</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 25px 30px;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .header .links {
+            margin-top: 15px;
+        }
+
+        .header .links a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .header .links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .conteudo {
+            padding: 30px;
+        }
+
+        .enunciado {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #3498db;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .enunciado p {
+            margin: 10px 0;
+        }
+
+        .enunciado .math {
+            font-size: 1.3em;
+        }
+
+        .alternativas {
+            background: #e8f4f8;
+            padding: 15px 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .alternativas span {
+            display: inline-block;
+            margin: 0 15px;
+            padding: 5px 12px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .passo {
+            background: #fafafa;
+            padding: 18px;
+            margin: 18px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .passo:hover {
+            background: #f5f7fa;
+        }
+
+        .passo strong {
+            color: #2c3e50;
+            font-size: 1.05em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .math {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .resposta-final {
+            background: #eafaf1;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 25px;
+            border: 2px solid #27ae60;
+        }
+
+        .resposta-final h2 {
+            color: #1e8449;
+            margin-bottom: 10px;
+        }
+
+        .resposta-final .math {
+            font-size: 1.8em;
+            background: transparent;
+            padding: 0;
+        }
+
+        .dica {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #f39c12;
+        }
+
+        footer {
+            background: #ecf0f1;
+            text-align: center;
+            padding: 15px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .conteudo {
+                padding: 15px;
+            }
+            .alternativas span {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📐 Questão 4 - Expressão com Raiz e Potência</h1>
+            <p>Cálculo de expressão numérica com raiz quadrada e potência</p>
+            <div class="links">
+                <a href="index.html">← Voltar ao índice geral</a>
+                <a href="q3.html">← Questão 3</a>
+                <a href="q5.html">Próxima questão (Q5) →</a>
+            </div>
+        </div>
+
+        <div class="conteudo">
+            <!-- Enunciado -->
+            <div class="enunciado">
+                <p><strong>📖 Enunciado:</strong></p>
+                <p>O valor da expressão é:</p>
+                \[
+                \left[ \frac{(-10) + 5 - (-4)}{\sqrt{9} + (-2)} \right]^2
+                \]
+            </div>
+
+            <!-- Alternativas -->
+            <div class="alternativas">
+                <strong>Alternativas:</strong>
+                <span>a) 1</span>
+                <span>b) 2</span>
+                <span>c) 21</span>
+                <span>d) 22</span>
+            </div>
+
+            <!-- Passo 1 -->
+            <div class="passo">
+                <strong>🔹 Passo 1 – Resolver o numerador (parte de cima da fração)</strong>
+                <p>O numerador é: \( (-10) + 5 - (-4) \)</p>
+                <p>Lembre-se: subtrair um número negativo é o mesmo que somar seu positivo.</p>
+                <div class="math">
+                    \[
+                    (-10) + 5 - (-4) = (-10) + 5 + 4
+                    \]
+                </div>
+                <div class="math">
+                    \[
+                    (-10) + 5 = -5
+                    \]
+                    \[
+                    -5 + 4 = -1
+                    \]
+                </div>
+                <p>Portanto:</p>
+                <div class="math">
+                    \[
+                    \text{Numerador} = -1
+                    \]
+                </div>
+            </div>
+
+            <!-- Passo 2 -->
+            <div class="passo">
+                <strong>🔹 Passo 2 – Resolver o denominador (parte de baixo da fração)</strong>
+                <p>O denominador é: \( \sqrt{9} + (-2) \)</p>
+                <p>Primeiro, calculamos a raiz quadrada de 9:</p>
+                <div class="math">
+                    \[
+                    \sqrt{9} = 3
+                    \]
+                </div>
+                <div class="math">
+                    \[
+                    3 + (-2) = 3 - 2 = 1
+                    \]
+                </div>
+                <p>Portanto:</p>
+                <div class="math">
+                    \[
+                    \text{Denominador} = 1
+                    \]
+                </div>
+            </div>
+
+            <!-- Passo 3 -->
+            <div class="passo">
+                <strong>🔹 Passo 3 – Resolver a fração</strong>
+                <div class="math">
+                    \[
+                    \frac{-1}{1} = -1
+                    \]
+                </div>
+            </div>
+
+            <!-- Passo 4 -->
+            <div class="passo">
+                <strong>🔹 Passo 4 – Elevar ao quadrado (potência fora dos colchetes)</strong>
+                <div class="math">
+                    \[
+                    \left[ -1 \right]^2 = (-1) \times (-1) = 1
+                    \]
+                </div>
+            </div>
+
+            <!-- Resposta final -->
+            <div class="resposta-final">
+                <h2>✅ RESPOSTA FINAL</h2>
+                <div class="math">
+                    \[
+                    \boxed{1}
+                    \]
+                </div>
+                <p>Alternativa correta: <strong>a) 1</strong></p>
+            </div>
+
+            <!-- Dica -->
+            <div class="dica">
+                <strong>💡 Dicas importantes:</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>\( \sqrt{9} = 3 \) (raiz quadrada positiva, pois estamos no contexto dos números reais).</li>
+                    <li>Subtrair um número negativo: \( a - (-b) = a + b \).</li>
+                    <li>Qualquer número real elevado ao quadrado resulta em um número <strong>não negativo</strong> (positivo ou zero).</li>
+                    <li>\( (-1)^2 = 1 \).</li>
+                </ul>
+            </div>
+
+            <!-- Resumo visual -->
+            <div class="passo">
+                <strong>📊 Resumo passo a passo:</strong>
+                <div class="math">
+                    \[
+                    \text{Numerador: } (-10) + 5 - (-4) = -10 + 5 + 4 = -1
+                    \]
+                    \[
+                    \text{Denominador: } \sqrt{9} + (-2) = 3 - 2 = 1
+                    \]
+                    \[
+                    \text{Fração: } \frac{-1}{1} = -1
+                    \]
+                    \[
+                    \text{Quadrado: } (-1)^2 = 1
+                    \]
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

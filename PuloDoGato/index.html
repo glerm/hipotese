@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Prova de Matemática - 7º Ano</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            background: #ecf0f1;
+            padding: 12px 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .questoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+            display: block;
+            border: 1px solid #e0e0e0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+
+        .card .numero {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .card .titulo {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .card.resolvida {
+            border-left: 5px solid #27ae60;
+            background: #eafaf1;
+        }
+
+        .status {
+            display: inline-block;
+            font-size: 0.8em;
+            background: #27ae60;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        .status.pendente {
+            background: #e67e22;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📐 ATIVIDADE DE MATEMÁTICA</h1>
+            <p>PULO DO GATO • 7º Ano – Ensino Fundamental Anos Finais</p>
+        </div>
+        <div class="info">
+           
+            <span><strong>Trimestre:</strong> I</span>
+            <span><strong>Data:</strong> 27/04/2026</span>
+            <span><strong>Componente:</strong> Matemática</span>
+        </div>
+
+        <div class="questoes-grid">
+            <!-- Q1 -->
+            <a href="q1.html" class="card resolvida">
+                <div class="numero">01</div>
+                <div class="titulo">Expressão numérica 1</div>
+                <span class="status">✅ Resolvida</span>
+            </a>
+            <!-- Q2 -->
+            <a href="q2.html" class="card resolvida">
+                <div class="numero">02</div>
+                <div class="titulo">Fração do saco de farinha</div>
+                <span class="status">✅ Resolvida</span>
+            </a>
+            <!-- Q3 -->
+            <a href="q3.html" class="card resolvida">
+                <div class="numero">03</div>
+                <div class="titulo">Fração da floresta</div>
+                <span class="status">✅ Resolvida</span>
+            </a>
+            <!-- Q4 -->
+            <a href="q4.html" class="card resolvida">
+                <div class="numero">04</div>
+                <div class="titulo">Expressão com raiz e potência</div>
+                <span class="status">✅ Resolvida</span>
+            </a>
+            <!-- Q5 -->
+            <a href="q5.html" class="card resolvida">
+                <div class="numero">05</div>
+                <div class="titulo">Multiplicação e divisão de frações</div>
+                <span class="status">✅ Resolvida</span>
+            </a>
+            <!-- Q6 -->
+            <a href="q6.html" class="card resolvida">
+                <div class="numero">06</div>
+                <div class="titulo">Problema das maçãs</div>
+                <span class="status">✅ Resolvida</span>
+            </a>
+            <!-- Q7 -->
+            <a href="q7.html" class="card resolvida">
+                <div class="numero">07</div>
+                <div class="titulo">Redução a uma potência</div>
+                <span class="status">✅ Resolvida</span>
+            </a>
+            <!-- Q8 -->
+            <a href="q8.html" class="card resolvida">
+                <div class="numero">08</div>
+                <div class="titulo">Cálculo de quocientes</div>
+                <span class="status">✅ Resolvida</span>
+            </a>
+            <!-- Q9 -->
+            <a href="q9.html" class="card resolvida">
+                <div class="numero">09</div>
+                <div class="titulo">Volume do cubo</div>
+                <span class="status">✅ Resolvida</span>
+            </a>
+            <!-- Q10 -->
+            <a href="q10.html" class="card resolvida">
+                <div class="numero">10</div>
+                <div class="titulo">Notação científica</div>
+                <span class="status">✅ Resolvida</span>
+            </a>
+            <!-- Q11 -->
+            <a href="q11.html" class="card resolvida">
+                <div class="numero">11</div>
+                <div class="titulo">Massa da Terra</div>
+                <span class="status">✅ Resolvida</span>
+            </a>
+            <!-- Q12 -->
+            <a href="q12.html" class="card resolvida">
+                <div class="numero">12</div>
+                <div class="titulo">Velocidade da luz</div>
+                <span class="status">✅ Resolvida</span>
+            </a>
+        </div>
+
+        <footer>
+            📘 Todas as 12 questões resolvidas detalhadamente.<br>
+            Clique em cada card para ver a resolução completa passo a passo.
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Q12 - Velocidade da Luz | Matemática</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 25px 30px;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .header .links {
+            margin-top: 15px;
+        }
+
+        .header .links a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .header .links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .conteudo {
+            padding: 30px;
+        }
+
+        .enunciado {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #3498db;
+            font-size: 1.1em;
+        }
+
+        .passo {
+            background: #fafafa;
+            padding: 18px;
+            margin: 18px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .passo:hover {
+            background: #f5f7fa;
+        }
+
+        .passo strong {
+            color: #2c3e50;
+            font-size: 1.05em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .math {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .resposta-final {
+            background: #eafaf1;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 25px;
+            border: 2px solid #27ae60;
+        }
+
+        .resposta-final h2 {
+            color: #1e8449;
+            margin-bottom: 10px;
+        }
+
+        .resposta-final .math {
+            font-size: 1.8em;
+            background: transparent;
+            padding: 0;
+        }
+
+        .dica {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #f39c12;
+        }
+
+        .atencao {
+            background: #fdebd0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #e67e22;
+        }
+
+        footer {
+            background: #ecf0f1;
+            text-align: center;
+            padding: 15px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📐 Questão 12 - Velocidade da Luz</h1>
+            <p>Notação Científica com arredondamento</p>
+            <div class="links">
+                <a href="index.html">← Índice geral</a>
+                <a href="q11.html">← Questão 11</a>
+            </div>
+        </div>
+
+        <div class="conteudo">
+            <!-- Enunciado -->
+            <div class="enunciado">
+                <p><strong>📖 Enunciado:</strong></p>
+                <p>A luz se move em velocidades diferentes a depender do meio pelo qual ela se propaga. No vácuo esta velocidade é de <strong>299 792 458 metros por segundo</strong>. De forma aproximada, escreva este número utilizando notação científica deixando <strong>duas casas após a vírgula</strong>.</p>
+            </div>
+
+            <!-- Passo 1 -->
+            <div class="passo">
+                <strong>🔹 Passo 1 – Entender o que é notação científica</strong>
+                <p>Notação científica é escrever um número na forma:</p>
+                <div class="math">
+                    \[
+                    a \times 10^n
+                    \]
+                </div>
+                <p>onde \( 1 \leq a < 10 \) e \( n \) é um número inteiro.</p>
+                <p>Exemplos: \( 3000 = 3 \times 10^3 \), \( 0,005 = 5 \times 10^{-3} \)</p>
+            </div>
+
+            <!-- Passo 2 -->
+            <div class="passo">
+                <strong>🔹 Passo 2 – Escrever o número em notação científica (sem arredondar)</strong>
+                <p>O número é: <strong>299.792.458</strong></p>
+                <p>Para escrevê-lo como \( a \times 10^n \), deslocamos a vírgula até que reste apenas um algarismo na parte inteira.</p>
+                <div class="math">
+                    \[
+                    299.792.458 = 2,99792458 \times 10^8
+                    \]
+                </div>
+                <p>O expoente é 8 porque andamos com a vírgula 8 casas para a esquerda.</p>
+            </div>
+
+            <!-- Passo 3 -->
+            <div class="passo">
+                <strong>🔹 Passo 3 – Arredondar para duas casas decimais</strong>
+                <p>O número \( 2,99792458 \) tem:</p>
+                <ul style="margin-left: 25px; margin-top: 10px;">
+                    <li>Primeira casa decimal: 9</li>
+                    <li>Segunda casa decimal: 9</li>
+                    <li>Terceira casa decimal: 7</li>
+                </ul>
+                <p>Para arredondar para duas casas decimais, olhamos para a terceira casa decimal.</p>
+                <p>Se a terceira casa decimal for ≥ 5, aumentamos a segunda casa decimal em 1.</p>
+                <p>A terceira casa decimal é <strong>7</strong> (≥ 5). Então aumentamos 9 + 1 = 10.</p>
+                <p>Isso faz com que a segunda casa decimal vire 0 e aumentamos a primeira casa decimal:</p>
+                <div class="math">
+                    \[
+                    2,99... \rightarrow 3,00
+                    \]
+                </div>
+            </div>
+
+            <!-- Passo 4 -->
+            <div class="passo">
+                <strong>🔹 Passo 4 – Verificação detalhada do arredondamento</strong>
+                <p>\( 2,99792458 \) arredondado para 2 casas decimais:</p>
+                <div class="math">
+                    \[
+                    2,99\ \text{(olhamos o próximo dígito: 7)}
+                    \]
+                </div>
+                <p>Como 7 ≥ 5, arredondamos para cima:</p>
+                <div class="math">
+                    \[
+                    2,99 + 0,01 = 3,00
+                    \]
+                </div>
+                <p>Portanto:</p>
+                <div class="math">
+                    \[
+                    2,99792458 \approx 3,00
+                    \]
+                </div>
+            </div>
+
+            <!-- Passo 5 -->
+            <div class="passo">
+                <strong>🔹 Passo 5 – Escrever o resultado final</strong>
+                <div class="math">
+                    \[
+                    299.792.458 \approx 3,00 \times 10^8 \ \text{m/s}
+                    \]
+                </div>
+            </div>
+
+            <!-- Resposta final -->
+            <div class="resposta-final">
+                <h2>✅ RESPOSTA FINAL</h2>
+                <div class="math">
+                    \[
+                    \boxed{3,00 \times 10^8 \ \text{m/s}}
+                    \]
+                </div>
+                <p>Essa é a forma aproximada da velocidade da luz no vácuo em notação científica, com duas casas decimais.</p>
+            </div>
+
+            <!-- Atenção -->
+            <div class="atencao">
+                <strong>⚠️ Atenção ao arredondamento:</strong>
+                <p>O número original é 2,99792458. Muitos estudantes arredondam diretamente para 2,99, esquecendo que o dígito seguinte (7) força o arredondamento para cima, resultando em 3,00.</p>
+                <p>Se fosse apenas 2,99, o arredondamento para duas casas seria 2,99. Mas como temos 2,997..., o correto é 3,00.</p>
+            </div>
+
+            <!-- Dica -->
+            <div class="dica">
+                <strong>💡 Dicas para notação científica:</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Números grandes (≥ 10) têm expoente <strong>positivo</strong>.</li>
+                    <li>Números pequenos (&lt; 1) têm expoente <strong>negativo</strong>.</li>
+                    <li>O expoente representa quantas casas a vírgula foi deslocada.</li>
+                    <li>Para arredondar, olhe a casa decimal seguinte à que deseja manter.</li>
+                </ul>
+            </div>
+
+            <!-- Tabela de referência -->
+            <div class="passo">
+                <strong>📊 Exemplos de arredondamento:</strong>
+                <div class="math">
+                    \[
+                    \begin{array}{c|c}
+                    \text{Original} & \text{2 casas decimais} \\
+                    \hline
+                    2,994... & 2,99 \\
+                    2,995... & 3,00 \\
+                    2,997... & 3,00 \\
+                    2,989... & 2,99
+                    \end{array}
+                    \]
+                </div>
+            </div>
+
+            <!-- Curiosidade -->
+            <div class="passo">
+                <strong>🔭 Curiosidade:</strong>
+                <p>A velocidade exata da luz no vácuo é <strong>299.792.458 m/s</strong> (valor exato por definição, desde 1983). O valor aproximado \( 3,00 \times 10^8 \ \text{m/s} \) é amplamente utilizado em cálculos de física e astronomia.</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

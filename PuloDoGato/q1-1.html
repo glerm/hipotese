@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Q1-1 - Expressão Numérica | Matemática</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #667eea; margin: 0; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; border-radius: 20px; padding: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        .voltar { display: inline-block; margin-bottom: 20px; color: #3498db; text-decoration: none; }
+        .voltar:hover { text-decoration: underline; }
+        .enunciado { background: #f0f4f8; padding: 20px; border-radius: 15px; margin: 20px 0; overflow-x: auto; }
+        .passo { background: #fafafa; padding: 15px; margin: 15px 0; border-left: 4px solid #3498db; border-radius: 8px; overflow-x: auto; }
+        .resposta { background: #eafaf1; padding: 20px; text-align: center; border-radius: 15px; margin-top: 25px; border: 2px solid #27ae60; }
+        .resposta h2 { color: #1e8449; margin: 0; }
+        .resposta .math { font-size: 1.8em; }
+        footer { text-align: center; margin-top: 30px; color: #7f8c8d; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="index.html" class="voltar">← Voltar ao índice</a>
+    <h1>📐 Q1-1: Expressão Numérica</h1>
+
+    <div class="enunciado">
+        <p><strong>Enunciado:</strong></p>
+        \[
+        \left\{ 4 + 2 \cdot \left[ 32 - \frac{1}{4} \cdot \left( \frac{2}{3} - \frac{1}{8} \right) + 2 \right] + 16 \right\} + 1
+        \]
+    </div>
+
+    <div class="passo">
+        <strong>Passo 1 – Parêntese interno:</strong>
+        \[
+        \frac{2}{3} - \frac{1}{8} = \frac{16}{24} - \frac{3}{24} = \frac{13}{24}
+        \]
+    </div>
+
+    <div class="passo">
+        <strong>Passo 2 – Multiplicação:</strong>
+        \[
+        \frac{1}{4} \cdot \frac{13}{24} = \frac{13}{96}
+        \]
+    </div>
+
+    <div class="passo">
+        <strong>Passo 3 – Dentro dos colchetes:</strong>
+        \[
+        32 - \frac{13}{96} + 2 = 34 - \frac{13}{96} = \frac{3264}{96} - \frac{13}{96} = \frac{3251}{96}
+        \]
+    </div>
+
+    <div class="passo">
+        <strong>Passo 4 – Multiplicar pelo 2:</strong>
+        \[
+        2 \cdot \frac{3251}{96} = \frac{6502}{96} = \frac{3251}{48}
+        \]
+    </div>
+
+    <div class="passo">
+        <strong>Passo 5 – Dentro das chaves:</strong>
+        \[
+        4 + \frac{3251}{48} + 16 = 20 + \frac{3251}{48} = \frac{960}{48} + \frac{3251}{48} = \frac{4211}{48}
+        \]
+    </div>
+
+    <div class="passo">
+        <strong>Passo 6 – Soma final (+1):</strong>
+        \[
+        \frac{4211}{48} + 1 = \frac{4211}{48} + \frac{48}{48} = \frac{4259}{48}
+        \]
+    </div>
+
+    <div class="resposta">
+        <h2>✅ Resposta:</h2>
+        \[
+        \boxed{\frac{4259}{48}}
+        \]
+        <p>ou aproximadamente \( 88,729 \)</p>
+    </div>
+
+</div>
+</body>
+</html>

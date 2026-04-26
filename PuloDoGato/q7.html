@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Q7 - Redução a uma só potência | Matemática</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 25px 30px;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .header .links {
+            margin-top: 15px;
+        }
+
+        .header .links a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .header .links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .conteudo {
+            padding: 30px;
+        }
+
+        .enunciado {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #3498db;
+            font-size: 1.1em;
+        }
+
+        .subquestao {
+            background: #fafafa;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .subquestao:hover {
+            background: #f5f7fa;
+        }
+
+        .subquestao .letra {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: inline-block;
+            background: #ecf0f1;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .regra {
+            background: #e8f4f8;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 3px solid #3498db;
+        }
+
+        .math {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .resposta-item {
+            background: #eafaf1;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .dica {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #f39c12;
+        }
+
+        .atencao {
+            background: #fdebd0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #e67e22;
+        }
+
+        .tabela-regras {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .tabela-regras table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tabela-regras th, .tabela-regras td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: center;
+        }
+
+        .tabela-regras th {
+            background: #3498db;
+            color: white;
+        }
+
+        footer {
+            background: #ecf0f1;
+            text-align: center;
+            padding: 15px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📐 Questão 7 - Redução a uma só potência</h1>
+            <p>Divisão de potências de mesma base</p>
+            <div class="links">
+                <a href="index.html">← Índice geral</a>
+                <a href="q6.html">← Questão 6</a>
+                <a href="q8.html">Próxima questão (Q8) →</a>
+            </div>
+        </div>
+
+        <div class="conteudo">
+            <!-- Enunciado -->
+            <div class="enunciado">
+                <p><strong>📖 Enunciado:</strong></p>
+                <p>Reduza a uma só potência (divisão de potências de mesma base):</p>
+            </div>
+
+            <!-- REGRA GERAL -->
+            <div class="regra">
+                <strong>📐 REGRA FUNDAMENTAL:</strong>
+                <p>Para divisão de potências de <strong>mesma base</strong>, conserva-se a base e <strong>subtraem-se os expoentes</strong>:</p>
+                <div class="math">
+                    \[
+                    a^m : a^n = a^{m-n}
+                    \]
+                </div>
+                <p><strong>Obs:</strong> Quando o divisor não tem expoente escrito (ex: \( (-3) \)), o expoente é <strong>1</strong>.</p>
+                <div class="math">
+                    \[
+                    (-3) = (-3)^1
+                    \]
+                </div>
+            </div>
+
+            <!-- ==================== a) ==================== -->
+            <div class="subquestao">
+                <div class="letra">a) \((-3)^7 : (-3)^2\)</div>
+                
+                <div class="regra">
+                    <strong>🔍 Aplicando a regra:</strong>
+                    <p>Bases iguais (\(-3\)), expoentes 7 e 2.</p>
+                    <div class="math">
+                        \[
+                        (-3)^7 : (-3)^2 = (-3)^{7-2} = (-3)^5
+                        \]
+                    </div>
+                </div>
+
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( \boxed{(-3)^5} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → (Se necessário calcular: \( (-3)^5 = -243 \), mas o exercício pede apenas reduzir a uma potência)
+                </p>
+            </div>
+
+            <!-- ==================== b) ==================== -->
+            <div class="subquestao">
+                <div class="letra">b) \((+4)^{10} : (+4)^3\)</div>
+                
+                <div class="regra">
+                    <strong>🔍 Aplicando a regra:</strong>
+                    <p>Bases iguais (\(+4\)), expoentes 10 e 3.</p>
+                    <div class="math">
+                        \[
+                        (+4)^{10} : (+4)^3 = (+4)^{10-3} = (+4)^7
+                        \]
+                    </div>
+                </div>
+
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( \boxed{4^7} \) ou \( \boxed{(+4)^7} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → Base positiva, o sinal + pode ser omitido.
+                </p>
+            </div>
+
+            <!-- ==================== c) ==================== -->
+            <div class="subquestao">
+                <div class="letra">c) \((-5)^6 : (-5)^2\)</div>
+                
+                <div class="regra">
+                    <strong>🔍 Aplicando a regra:</strong>
+                    <p>Bases iguais (\(-5\)), expoentes 6 e 2.</p>
+                    <div class="math">
+                        \[
+                        (-5)^6 : (-5)^2 = (-5)^{6-2} = (-5)^4
+                        \]
+                    </div>
+                </div>
+
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( \boxed{(-5)^4} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → Expoente par (4) → resultado positivo se calcular, mas mantemos a potência.
+                </p>
+            </div>
+
+            <!-- ==================== d) ==================== -->
+            <div class="subquestao">
+                <div class="letra">d) \((+3)^9 : (+3)\)</div>
+                
+                <div class="regra">
+                    <strong>🔍 Atenção:</strong>
+                    <p>O divisor \((+3)\) não tem expoente escrito. Isso significa que o expoente é <strong>1</strong>.</p>
+                    <div class="math">
+                        \[
+                        (+3) = (+3)^1
+                        \]
+                    </div>
+                </div>
+
+                <div class="regra">
+                    <strong>🔍 Aplicando a regra:</strong>
+                    <p>Bases iguais (\(+3\)), expoentes 9 e 1.</p>
+                    <div class="math">
+                        \[
+                        (+3)^9 : (+3)^1 = (+3)^{9-1} = (+3)^8
+                        \]
+                    </div>
+                </div>
+
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( \boxed{3^8} \) ou \( \boxed{(+3)^8} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → O expoente 1 fica subentendido e não precisa ser escrito.
+                </p>
+            </div>
+
+            <!-- ==================== e) ==================== -->
+            <div class="subquestao">
+                <div class="letra">e) \((-2)^8 : (-2)^5\)</div>
+                
+                <div class="regra">
+                    <strong>🔍 Aplicando a regra:</strong>
+                    <p>Bases iguais (\(-2\)), expoentes 8 e 5.</p>
+                    <div class="math">
+                        \[
+                        (-2)^8 : (-2)^5 = (-2)^{8-5} = (-2)^3
+                        \]
+                    </div>
+                </div>
+
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( \boxed{(-2)^3} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → Expoente ímpar (3) → resultado negativo se calcular, mas mantemos a potência.
+                </p>
+            </div>
+
+            <!-- ==================== f) ==================== -->
+            <div class="subquestao">
+                <div class="letra">f) \((-3)^7 : (-3)\)</div>
+                
+                <div class="regra">
+                    <strong>🔍 Atenção:</strong>
+                    <p>O divisor \((-3)\) tem expoente <strong>1</strong>.</p>
+                    <div class="math">
+                        \[
+                        (-3) = (-3)^1
+                        \]
+                    </div>
+                </div>
+
+                <div class="regra">
+                    <strong>🔍 Aplicando a regra:</strong>
+                    <p>Bases iguais (\(-3\)), expoentes 7 e 1.</p>
+                    <div class="math">
+                        \[
+                        (-3)^7 : (-3)^1 = (-3)^{7-1} = (-3)^6
+                        \]
+                    </div>
+                </div>
+
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( \boxed{(-3)^6} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → Expoente par (6) → resultado positivo se calcular.
+                </p>
+            </div>
+
+            <!-- ==================== g) ==================== -->
+            <div class="subquestao">
+                <div class="letra">g) \((-9)^4 : (-9)\)</div>
+                
+                <div class="regra">
+                    <strong>🔍 Atenção:</strong>
+                    <p>O divisor \((-9)\) tem expoente <strong>1</strong>.</p>
+                    <div class="math">
+                        \[
+                        (-9) = (-9)^1
+                        \]
+                    </div>
+                </div>
+
+                <div class="regra">
+                    <strong>🔍 Aplicando a regra:</strong>
+                    <p>Bases iguais (\(-9\)), expoentes 4 e 1.</p>
+                    <div class="math">
+                        \[
+                        (-9)^4 : (-9)^1 = (-9)^{4-1} = (-9)^3
+                        \]
+                    </div>
+                </div>
+
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( \boxed{(-9)^3} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → Expoente ímpar (3) → resultado negativo se calcular.
+                </p>
+            </div>
+
+            <!-- ==================== h) ==================== -->
+            <div class="subquestao">
+                <div class="letra">h) \((-4)^2 : (-4)^2\)</div>
+                
+                <div class="regra">
+                    <strong>🔍 Aplicando a regra:</strong>
+                    <p>Bases iguais (\(-4\)), expoentes 2 e 2.</p>
+                    <div class="math">
+                        \[
+                        (-4)^2 : (-4)^2 = (-4)^{2-2} = (-4)^0
+                        \]
+                    </div>
+                </div>
+
+                <div class="regra">
+                    <strong>📌 Regra especial:</strong>
+                    <p>Qualquer base (diferente de zero) elevada a <strong>expoente 0 é igual a 1</strong>.</p>
+                    <div class="math">
+                        \[
+                        a^0 = 1 \quad (a \neq 0)
+                        \]
+                    </div>
+                </div>
+
+                <div class="math">
+                    \[
+                    (-4)^0 = 1
+                    \]
+                </div>
+
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( \boxed{1} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → Expoentes iguais: subtração resulta em 0 → potência de expoente zero = 1.
+                </p>
+            </div>
+
+            <!-- TABELA RESUMO -->
+            <div class="tabela-regras">
+                <strong>📊 Resumo das respostas:</strong>
+                <table style="margin-top: 10px;">
+                    <thead>
+                        <tr><th>Item</th><th>Operação</th><th>Subtração</th><th>Resultado (potência)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>a)</td><td>\((-3)^7 : (-3)^2\)</td><td>\((-3)^{7-2}\)</td><td>\((-3)^5\)</td></tr>
+                        <tr><td>b)</td><td>\((+4)^{10} : (+4)^3\)</td><td>\((+4)^{10-3}\)</td><td>\(4^7\)</td></tr>
+                        <tr><td>c)</td><td>\((-5)^6 : (-5)^2\)</td><td>\((-5)^{6-2}\)</td><td>\((-5)^4\)</td></tr>
+                        <tr><td>d)</td><td>\((+3)^9 : (+3)\)</td><td>\((+3)^{9-1}\)</td><td>\(3^8\)</td></tr>
+                        <tr><td>e)</td><td>\((-2)^8 : (-2)^5\)</td><td>\((-2)^{8-5}\)</td><td>\((-2)^3\)</td></tr>
+                        <tr><td>f)</td><td>\((-3)^7 : (-3)\)</td><td>\((-3)^{7-1}\)</td><td>\((-3)^6\)</td></tr>
+                        <tr><td>g)</td><td>\((-9)^4 : (-9)\)</td><td>\((-9)^{4-1}\)</td><td>\((-9)^3\)</td></tr>
+                        <tr><td>h)</td><td>\((-4)^2 : (-4)^2\)</td><td>\((-4)^{2-2} = (-4)^0\)</td><td>\(1\)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PROBLEMATIZAÇÃO -->
+            <div class="atencao">
+                <strong>⚠️ PROBLEMATIZAÇÃO - Erros comuns:</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>Erro 1:</strong> Somar os expoentes em vez de subtrair. Lembre: <strong>divisão = subtrai expoentes</strong>; multiplicação = soma expoentes.</li>
+                    <li><strong>Erro 2:</strong> Esquecer que o divisor sem expoente tem expoente <strong>1</strong>. Ex: \((+3)^9 : (+3) = (+3)^8\) e não \((+3)^9\).</li>
+                    <li><strong>Erro 3:</strong> Na letra h), esquecer a regra do expoente zero: qualquer base (diferente de zero) elevada a 0 é igual a <strong>1</strong>.</li>
+                    <li><strong>Erro 4:</strong> Calcular o valor numérico quando o exercício pede apenas reduzir a uma potência.</li>
+                </ul>
+            </div>
+
+            <!-- REFLEXÃO -->
+            <div class="dica">
+                <strong>💡 Reflexão sobre a regra:</strong>
+                <p>Por que \(a^m : a^n = a^{m-n}\)?</p>
+                <div class="math">
+                    \[
+                    \frac{a^m}{a^n} = \frac{a \times a \times ... \times a \ (m \text{ vezes})}{a \times a \times ... \times a \ (n \text{ vezes})} = a^{m-n}
+                    \]
+                </div>
+                <p>Exemplo numérico: \(2^5 : 2^3 = \frac{32}{8} = 4 = 2^{5-3} = 2^2 = 4\). A regra funciona!</p>
+            </div>
+
+            <!-- CASO ESPECIAL EXPOENTE ZERO -->
+            <div class="tabela-regras">
+                <strong>📌 Caso especial: expoente zero</strong>
+                <table style="margin-top: 10px;">
+                    <thead>
+                        <tr><th>Operação</th><th>Resultado</th><th>Explicação</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>\(a^m : a^m\)</td><td>\(a^0 = 1\)</td><td>Qualquer número dividido por ele mesmo = 1</td></tr>
+                        <tr><td>\(5^3 : 5^3\)</td><td>\(5^0 = 1\)</td><td>\(125 : 125 = 1\)</td></tr>
+                        <tr><td>\((-4)^2 : (-4)^2\)</td><td>\(1\)</td><td>\(16 : 16 = 1\)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

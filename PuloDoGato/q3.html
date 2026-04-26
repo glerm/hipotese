@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Q3 - Problema da Floresta | Matemática</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 25px 30px;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .header .links {
+            margin-top: 15px;
+        }
+
+        .header .links a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .header .links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .conteudo {
+            padding: 30px;
+        }
+
+        .enunciado {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #3498db;
+            font-size: 1.1em;
+        }
+
+        .enunciado p {
+            margin: 10px 0;
+        }
+
+        .passo {
+            background: #fafafa;
+            padding: 18px;
+            margin: 18px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .passo:hover {
+            background: #f5f7fa;
+        }
+
+        .passo strong {
+            color: #2c3e50;
+            font-size: 1.05em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .math {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .resposta-final {
+            background: #eafaf1;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 25px;
+            border: 2px solid #27ae60;
+        }
+
+        .resposta-final h2 {
+            color: #1e8449;
+            margin-bottom: 10px;
+        }
+
+        .resposta-final .math {
+            font-size: 1.8em;
+            background: transparent;
+            padding: 0;
+        }
+
+        .dica {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #f39c12;
+        }
+
+        .atencao {
+            background: #fdebd0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #e67e22;
+        }
+
+        footer {
+            background: #ecf0f1;
+            text-align: center;
+            padding: 15px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .conteudo {
+                padding: 15px;
+            }
+            .enunciado {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📐 Questão 3 - Problema da Floresta</h1>
+            <p>FRAÇÃO QUE AINDA PRECISA SER RECUPERADA</p>
+            <div class="links">
+                <a href="index.html">← Voltar ao índice geral</a>
+                <a href="q2.html">← Questão 2</a>
+                <a href="q4.html">Próxima questão (Q4) →</a>
+            </div>
+        </div>
+
+        <div class="conteudo">
+            <!-- Enunciado -->
+            <div class="enunciado">
+                <p><strong>📖 Enunciado:</strong></p>
+                <p>Após um incêndio de grande proporção, \( \frac{3}{5} \) da área total de uma floresta foram destruídos. Com o tempo, a recuperação natural, aliada ao trabalho de um grupo de ambientalistas, permitiu a regeneração de uma área equivalente a \( \frac{1}{4} \) da área total da floresta <strong>antes do incêndio</strong>. Com base nessas informações, qual fração da floresta original ainda precisa ser recuperada?</p>
+            </div>
+
+            <!-- Passo 1 -->
+            <div class="passo">
+                <strong>🔹 Passo 1 – Entender o problema</strong>
+                <p>Área total original da floresta = \( 1 \) (inteiro).</p>
+                <p>Destruído pelo incêndio: \( \frac{3}{5} \) da área total.</p>
+                <div class="math">
+                    \[
+                    \text{Destruído} = \frac{3}{5}
+                    \]
+                </div>
+                <p>Isso significa que \( \frac{3}{5} \) da floresta foi queimado e precisa ser recuperado (total ou parcialmente).</p>
+            </div>
+
+            <!-- Passo 2 -->
+            <div class="passo">
+                <strong>🔹 Passo 2 – O que foi regenerado</strong>
+                <p>Com o tempo, regenerou-se uma área equivalente a \( \frac{1}{4} \) da área total <strong>original</strong>.</p>
+                <div class="math">
+                    \[
+                    \text{Regenerado} = \frac{1}{4}
+                    \]
+                </div>
+                <p>Atenção: Esse valor é do total original, não da área destruída.</p>
+            </div>
+
+            <!-- Passo 3 -->
+            <div class="passo">
+                <strong>🔹 Passo 3 – Calcular quanto ainda falta recuperar</strong>
+                <p>A área que ainda precisa ser recuperada é a parte destruída que <strong>não foi regenerada</strong>.</p>
+                <div class="math">
+                    \[
+                    \text{Falta recuperar} = \text{Destruído} - \text{Regenerado}
+                    \]
+                </div>
+                <div class="math">
+                    \[
+                    \text{Falta recuperar} = \frac{3}{5} - \frac{1}{4}
+                    \]
+                </div>
+            </div>
+
+            <!-- Passo 4 -->
+            <div class="passo">
+                <strong>🔹 Passo 4 – Realizar a subtração de frações</strong>
+                <p>Encontrar o denominador comum (MMC de 5 e 4 = 20):</p>
+                <div class="math">
+                    \[
+                    \frac{3}{5} = \frac{12}{20}, \quad \frac{1}{4} = \frac{5}{20}
+                    \]
+                </div>
+                <div class="math">
+                    \[
+                    \frac{12}{20} - \frac{5}{20} = \frac{7}{20}
+                    \]
+                </div>
+            </div>
+
+            <!-- Resposta final -->
+            <div class="resposta-final">
+                <h2>✅ RESPOSTA FINAL</h2>
+                <div class="math">
+                    \[
+                    \boxed{\frac{7}{20}}
+                    \]
+                </div>
+                <p>Ainda precisa ser recuperado \( \frac{7}{20} \) da floresta original.</p>
+            </div>
+
+            <!-- Dica -->
+            <div class="dica">
+                <strong>💡 Dica:</strong> A regeneração foi de \( \frac{1}{4} \) do <strong>total original</strong>, não da área destruída. Por isso subtraímos diretamente \( \frac{3}{5} - \frac{1}{4} \). Se a regeneração fosse sobre a área destruída, o cálculo seria diferente (porcentagem da parte, não do todo).
+            </div>
+
+            <!-- Atenção para erro comum -->
+            <div class="atencao">
+                <strong>⚠️ Erro comum:</strong> Alguns estudantes calculam primeiro a área não destruída (\( 1 - \frac{3}{5} = \frac{2}{5} \)) e depois somam com a regenerada, o que está errado. A área não destruída já está OK, não precisa ser recuperada. O que precisa ser recuperado é apenas uma parte do que foi destruído.
+            </div>
+
+            <!-- Resumo visual -->
+            <div class="passo">
+                <strong>📊 Resumo visual:</strong>
+                <div class="math">
+                    \[
+                    \text{Total original} = 1 = \frac{20}{20}
+                    \]
+                    \[
+                    \text{Destruído} = \frac{3}{5} = \frac{12}{20}
+                    \]
+                    \[
+                    \text{Regenerado} = \frac{1}{4} = \frac{5}{20}
+                    \]
+                    \[
+                    \text{Já recuperado (da área destruída)} = \frac{5}{20}
+                    \]
+                    \[
+                    \text{Falta recuperar (da área destruída)} = \frac{12}{20} - \frac{5}{20} = \frac{7}{20}
+                    \]
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

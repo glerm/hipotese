@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Q8 - Cálculo de Quocientes | Matemática</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 25px 30px;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .header .links {
+            margin-top: 15px;
+        }
+
+        .header .links a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .header .links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .conteudo {
+            padding: 30px;
+        }
+
+        .enunciado {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #3498db;
+            font-size: 1.1em;
+        }
+
+        .subquestao {
+            background: #fafafa;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .subquestao:hover {
+            background: #f5f7fa;
+        }
+
+        .subquestao .letra {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: inline-block;
+            background: #ecf0f1;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .regra {
+            background: #e8f4f8;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 3px solid #3498db;
+        }
+
+        .math {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .resposta-item {
+            background: #eafaf1;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .dica {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #f39c12;
+        }
+
+        .atencao {
+            background: #fdebd0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #e67e22;
+        }
+
+        .tabela-regras {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .tabela-regras table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tabela-regras th, .tabela-regras td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: center;
+        }
+
+        .tabela-regras th {
+            background: #3498db;
+            color: white;
+        }
+
+        footer {
+            background: #ecf0f1;
+            text-align: center;
+            padding: 15px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📐 Questão 8 - Cálculo de Quocientes</h1>
+            <p>Divisão de potências de mesma base</p>
+            <div class="links">
+                <a href="index.html">← Índice geral</a>
+                <a href="q7.html">← Questão 7</a>
+                <a href="q9.html">Próxima questão (Q9) →</a>
+            </div>
+        </div>
+
+        <div class="conteudo">
+            <!-- Enunciado -->
+            <div class="enunciado">
+                <p><strong>📖 Enunciado:</strong></p>
+                <p>Calcule os quocientes (divisões de potências de mesma base):</p>
+            </div>
+
+            <!-- REGRA GERAL -->
+            <div class="regra">
+                <strong>📐 REGRA FUNDAMENTAL:</strong>
+                <p>Para divisão de potências de <strong>mesma base</strong>, conserva-se a base e <strong>subtraem-se os expoentes</strong>:</p>
+                <div class="math">
+                    \[
+                    a^m : a^n = a^{m-n}
+                    \]
+                </div>
+                <p><strong>Regra dos sinais para a base negativa:</strong></p>
+                <ul style="margin-left: 25px; margin-top: 5px;">
+                    <li>Base negativa com expoente <strong>PAR</strong> → resultado <strong>POSITIVO</strong></li>
+                    <li>Base negativa com expoente <strong>ÍMPAR</strong> → resultado <strong>NEGATIVO</strong></li>
+                </ul>
+            </div>
+
+            <!-- ==================== a) ==================== -->
+            <div class="subquestao">
+                <div class="letra">a) \((-5)^6 : (-5)^4\)</div>
+                
+                <div class="regra">
+                    <strong>🔍 Aplicando a regra:</strong>
+                    <p>Bases iguais (\(-5\)), expoentes 6 e 4.</p>
+                    <div class="math">
+                        \[
+                        (-5)^6 : (-5)^4 = (-5)^{6-4} = (-5)^2
+                        \]
+                    </div>
+                </div>
+
+                <div class="math">
+                    \[
+                    (-5)^2 = (-5) \times (-5) = +25
+                    \]
+                </div>
+
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( \boxed{25} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → EXPOENTE PAR (2) → resultado POSITIVO.
+                </p>
+            </div>
+
+            <!-- ==================== b) ==================== -->
+            <div class="subquestao">
+                <div class="letra">b) \((-3)^5 : (-3)^2\)</div>
+                
+                <div class="regra">
+                    <strong>🔍 Aplicando a regra:</strong>
+                    <p>Bases iguais (\(-3\)), expoentes 5 e 2.</p>
+                    <div class="math">
+                        \[
+                        (-3)^5 : (-3)^2 = (-3)^{5-2} = (-3)^3
+                        \]
+                    </div>
+                </div>
+
+                <div class="math">
+                    \[
+                    (-3)^3 = (-3) \times (-3) \times (-3) = -27
+                    \]
+                </div>
+
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( \boxed{-27} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → EXPOENTE ÍMPAR (3) → resultado NEGATIVO.
+                </p>
+            </div>
+
+            <!-- ==================== c) ==================== -->
+            <div class="subquestao">
+                <div class="letra">c) \((-4)^8 : (-4)^5\)</div>
+                
+                <div class="regra">
+                    <strong>🔍 Aplicando a regra:</strong>
+                    <p>Bases iguais (\(-4\)), expoentes 8 e 5.</p>
+                    <div class="math">
+                        \[
+                        (-4)^8 : (-4)^5 = (-4)^{8-5} = (-4)^3
+                        \]
+                    </div>
+                </div>
+
+                <div class="math">
+                    \[
+                    (-4)^3 = (-4) \times (-4) \times (-4) = -64
+                    \]
+                </div>
+
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( \boxed{-64} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → EXPOENTE ÍMPAR (3) → resultado NEGATIVO.
+                </p>
+            </div>
+
+            <!-- ==================== d) ==================== -->
+            <div class="subquestao">
+                <div class="letra">d) \((-1)^9 : (-1)^2\)</div>
+                
+                <div class="regra">
+                    <strong>🔍 Aplicando a regra:</strong>
+                    <p>Bases iguais (\(-1\)), expoentes 9 e 2.</p>
+                    <div class="math">
+                        \[
+                        (-1)^9 : (-1)^2 = (-1)^{9-2} = (-1)^7
+                        \]
+                    </div>
+                </div>
+
+                <div class="math">
+                    \[
+                    (-1)^7 = -1
+                    \]
+                </div>
+                <p>(Pois 7 é ímpar, então o resultado é -1)</p>
+
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( \boxed{-1} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → EXPOENTE ÍMPAR (7) → resultado NEGATIVO.
+                </p>
+            </div>
+
+            <!-- ==================== e) ==================== -->
+            <div class="subquestao">
+                <div class="letra">e) \((-7)^8 : (-7)^6\)</div>
+                
+                <div class="regra">
+                    <strong>🔍 Aplicando a regra:</strong>
+                    <p>Bases iguais (\(-7\)), expoentes 8 e 6.</p>
+                    <div class="math">
+                        \[
+                        (-7)^8 : (-7)^6 = (-7)^{8-6} = (-7)^2
+                        \]
+                    </div>
+                </div>
+
+                <div class="math">
+                    \[
+                    (-7)^2 = (-7) \times (-7) = +49
+                    \]
+                </div>
+
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( \boxed{49} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → EXPOENTE PAR (2) → resultado POSITIVO.
+                </p>
+            </div>
+
+            <!-- TABELA RESUMO -->
+            <div class="tabela-regras">
+                <strong>📊 Resumo das respostas:</strong>
+                <table style="margin-top: 10px;">
+                    <thead>
+                        <tr><th>Item</th><th>Operação</th><th>Subtração</th><th>Resultado</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>a)</td><td>\((-5)^6 : (-5)^4\)</td><td>\((-5)^2\)</td><td>\(25\)</td></tr>
+                        <tr><td>b)</td><td>\((-3)^5 : (-3)^2\)</td><td>\((-3)^3\)</td><td>\(-27\)</td></tr>
+                        <tr><td>c)</td><td>\((-4)^8 : (-4)^5\)</td><td>\((-4)^3\)</td><td>\(-64\)</td></tr>
+                        <tr><td>d)</td><td>\((-1)^9 : (-1)^2\)</td><td>\((-1)^7\)</td><td>\(-1\)</td></tr>
+                        <tr><td>e)</td><td>\((-7)^8 : (-7)^6\)</td><td>\((-7)^2\)</td><td>\(49\)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PROBLEMATIZAÇÃO -->
+            <div class="atencao">
+                <strong>⚠️ PROBLEMATIZAÇÃO - Erros comuns:</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>Erro 1:</strong> Somar os expoentes em vez de subtrair. Lembre: <strong>divisão = subtrai expoentes</strong>; multiplicação = soma expoentes.</li>
+                    <li><strong>Erro 2:</strong> Esquecer de calcular a potência final após a subtração. Exemplo: em a), alguns respondem \((-5)^2\) sem calcular, deixando como \(25\)? Não, \((-5)^2 = 25\).</li>
+                    <li><strong>Erro 3:</strong> Confundir a regra dos sinais: base negativa com expoente <strong>PAR</strong> dá POSITIVO; com expoente <strong>ÍMPAR</strong> dá NEGATIVO.</li>
+                    <li><strong>Erro 4:</strong> Na letra d), muitos esquecem que \((-1)^7 = -1\) e respondem 1.</li>
+                </ul>
+            </div>
+
+            <!-- REFLEXÃO -->
+            <div class="dica">
+                <strong>💡 Reflexão sobre a regra:</strong>
+                <p>Por que \(a^m : a^n = a^{m-n}\)?</p>
+                <div class="math">
+                    \[
+                    \frac{a^m}{a^n} = \frac{a \times a \times ... \times a \ (m \text{ vezes})}{a \times a \times ... \times a \ (n \text{ vezes})} = a^{m-n}
+                    \]
+                </div>
+                <p>Exemplo numérico: \(2^5 : 2^3 = \frac{32}{8} = 4 = 2^{5-3} = 2^2 = 4\). A regra funciona!</p>
+            </div>
+
+            <!-- REGRA DOS SINAIS -->
+            <div class="tabela-regras">
+                <strong>📌 Regra dos sinais para potências com base negativa:</strong>
+                <table style="margin-top: 10px;">
+                    <thead>
+                        <tr><th>Expoente</th><th>Paridade</th><th>Sinal do resultado</th><th>Exemplo</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0, 2, 4, 6, 8, ...</td><td>PAR</td><td>POSITIVO</td><td>\((-3)^2 = 9\)</td></tr>
+                        <tr><td>1, 3, 5, 7, 9, ...</td><td>ÍMPAR</td><td>NEGATIVO</td><td>\((-3)^3 = -27\)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Q9 - Volume do Cubo | Matemática</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 25px 30px;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .header .links {
+            margin-top: 15px;
+        }
+
+        .header .links a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .header .links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .conteudo {
+            padding: 30px;
+        }
+
+        .enunciado {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #3498db;
+            font-size: 1.1em;
+        }
+
+        .passo {
+            background: #fafafa;
+            padding: 18px;
+            margin: 18px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .passo:hover {
+            background: #f5f7fa;
+        }
+
+        .passo strong {
+            color: #2c3e50;
+            font-size: 1.05em;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .math {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .resposta-final {
+            background: #eafaf1;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 25px;
+            border: 2px solid #27ae60;
+        }
+
+        .resposta-final h2 {
+            color: #1e8449;
+            margin-bottom: 10px;
+        }
+
+        .resposta-final .math {
+            font-size: 1.8em;
+            background: transparent;
+            padding: 0;
+        }
+
+        .dica {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #f39c12;
+        }
+
+        .atencao {
+            background: #fdebd0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #e67e22;
+        }
+
+        .ilustracao {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        footer {
+            background: #ecf0f1;
+            text-align: center;
+            padding: 15px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📐 Questão 9 - Volume do Cubo</h1>
+            <p>Cálculo do volume com aresta fracionária</p>
+            <div class="links">
+                <a href="index.html">← Índice geral</a>
+                <a href="q8.html">← Questão 8</a>
+                <a href="q10.html">Próxima questão (Q10) →</a>
+            </div>
+        </div>
+
+        <div class="conteudo">
+            <!-- Enunciado -->
+            <div class="enunciado">
+                <p><strong>📖 Enunciado:</strong></p>
+                <p>Um reservatório para grãos será construído em um sítio. Ele terá a forma de cubo com aresta medindo \( \frac{4}{5} \). O volume desse cubo será de:</p>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">(Unidade de medida não foi especificada; o volume será dado em unidades cúbicas)</p>
+            </div>
+
+            <!-- Passo 1 -->
+            <div class="passo">
+                <strong>🔹 Passo 1 – Lembrar a fórmula do volume do cubo</strong>
+                <p>O cubo é um sólido geométrico com todas as arestas iguais.</p>
+                <div class="math">
+                    \[
+                    V = a^3
+                    \]
+                </div>
+                <p>onde \( a \) é a medida da aresta.</p>
+            </div>
+
+            <!-- Ilustração do cubo (textual) -->
+            <div class="ilustracao">
+                <strong>📦 Cubo com aresta \( a = \frac{4}{5} \)</strong>
+                <div style="font-family: monospace; font-size: 1.2em; margin-top: 10px;">
+                    ┌─────────┐<br>
+                    │         │  a = 4/5<br>
+                    │         │<br>
+                    └─────────┘<br>
+                    Volume = a × a × a
+                </div>
+            </div>
+
+            <!-- Passo 2 -->
+            <div class="passo">
+                <strong>🔹 Passo 2 – Substituir o valor da aresta na fórmula</strong>
+                <div class="math">
+                    \[
+                    a = \frac{4}{5}
+                    \]
+                    \[
+                    V = \left(\frac{4}{5}\right)^3
+                    \]
+                </div>
+            </div>
+
+            <!-- Passo 3 -->
+            <div class="passo">
+                <strong>🔹 Passo 3 – Calcular a potência da fração</strong>
+                <p>Para elevar uma fração a uma potência, elevamos o numerador e o denominador a essa potência:</p>
+                <div class="math">
+                    \[
+                    \left(\frac{4}{5}\right)^3 = \frac{4^3}{5^3}
+                    \]
+                </div>
+            </div>
+
+            <!-- Passo 4 -->
+            <div class="passo">
+                <strong>🔹 Passo 4 – Calcular as potências</strong>
+                <div class="math">
+                    \[
+                    4^3 = 4 \times 4 \times 4 = 64
+                    \]
+                    \[
+                    5^3 = 5 \times 5 \times 5 = 125
+                    \]
+                </div>
+            </div>
+
+            <!-- Passo 5 -->
+            <div class="passo">
+                <strong>🔹 Passo 5 – Escrever o resultado</strong>
+                <div class="math">
+                    \[
+                    V = \frac{64}{125}
+                    \]
+                </div>
+            </div>
+
+            <!-- Resposta final -->
+            <div class="resposta-final">
+                <h2>✅ RESPOSTA FINAL</h2>
+                <div class="math">
+                    \[
+                    \boxed{\frac{64}{125}}
+                    \]
+                </div>
+                <p>Volume do cubo = \( \frac{64}{125} \) (unidade de comprimento)³</p>
+                <p>ou aproximadamente \( 0,512 \) unidades cúbicas</p>
+            </div>
+
+            <!-- Valores numéricos -->
+            <div class="passo">
+                <strong>🔢 Valores numéricos para referência:</strong>
+                <div class="math">
+                    \[
+                    \frac{64}{125} = 0,512
+                    \]
+                </div>
+                <p>Se a unidade da aresta for, por exemplo, metros (m), o volume será \( 0,512 \) m³.</p>
+            </div>
+
+            <!-- Atenção -->
+            <div class="atencao">
+                <strong>⚠️ Atenção:</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>O volume é calculado elevando a aresta ao <strong>cubo</strong> (potência 3).</li>
+                    <li>Não confunda com a área do quadrado (\( a^2 \)).</li>
+                    <li>Quando a aresta é uma fração, a potência se aplica ao numerador e ao denominador separadamente.</li>
+                    <li>O resultado \( \frac{64}{125} \) já está na forma irredutível (64 e 125 não têm divisores comuns além de 1).</li>
+                </ul>
+            </div>
+
+            <!-- Dica -->
+            <div class="dica">
+                <strong>💡 Dicas para potências de frações:</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>\( \left(\frac{a}{b}\right)^n = \frac{a^n}{b^n} \)</li>
+                    <li>Exemplo: \( \left(\frac{2}{3}\right)^2 = \frac{4}{9} \)</li>
+                    <li>Exemplo: \( \left(\frac{1}{2}\right)^3 = \frac{1}{8} \)</li>
+                </ul>
+            </div>
+
+            <!-- Exemplo adicional -->
+            <div class="passo">
+                <strong>📚 Exemplo adicional:</strong>
+                <p>Se a aresta do cubo fosse \( \frac{3}{4} \), o volume seria:</p>
+                <div class="math">
+                    \[
+                    V = \left(\frac{3}{4}\right)^3 = \frac{27}{64}
+                    \]
+                </div>
+            </div>
+
+            <!-- Cálculo passo a passo extenso -->
+            <div class="passo">
+                <strong>📐 Cálculo passo a passo (forma extensa):</strong>
+                <div class="math">
+                    \[
+                    \frac{4}{5} \times \frac{4}{5} \times \frac{4}{5} = \frac{4 \times 4 \times 4}{5 \times 5 \times 5} = \frac{64}{125}
+                    \]
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

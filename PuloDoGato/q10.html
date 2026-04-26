@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Q10 - Notação Científica | Matemática</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 25px 30px;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .header .links {
+            margin-top: 15px;
+        }
+
+        .header .links a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .header .links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .conteudo {
+            padding: 30px;
+        }
+
+        .enunciado {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #3498db;
+            font-size: 1.1em;
+        }
+
+        .subquestao {
+            background: #fafafa;
+            padding: 18px;
+            margin: 18px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .subquestao:hover {
+            background: #f5f7fa;
+        }
+
+        .subquestao .letra {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: inline-block;
+            background: #ecf0f1;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .math {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .resposta-item {
+            background: #eafaf1;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .dica {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #f39c12;
+        }
+
+        footer {
+            background: #ecf0f1;
+            text-align: center;
+            padding: 15px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📐 Questão 10 - Notação Científica</h1>
+            <p>Escrevendo números grandes e pequenos em notação científica</p>
+            <div class="links">
+                <a href="index.html">← Índice geral</a>
+                <a href="q9.html">← Questão 9</a>
+                <a href="q11.html">Próxima questão (Q11) →</a>
+            </div>
+        </div>
+
+        <div class="conteudo">
+            <!-- Enunciado -->
+            <div class="enunciado">
+                <p><strong>📖 Enunciado:</strong></p>
+                <p>Escreva em notação científica:</p>
+            </div>
+
+            <!-- Subquestão a -->
+            <div class="subquestao">
+                <div class="letra">a) 108 000 000</div>
+                <div class="math">
+                    \[
+                    108.000.000 = 1,08 \times 10^8
+                    \]
+                </div>
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( 1,08 \times 10^8 \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → Deslocamos a vírgula 8 casas para a esquerda: 108.000.000 = 1,08 × 10⁸
+                </p>
+            </div>
+
+            <!-- Subquestão b -->
+            <div class="subquestao">
+                <div class="letra">b) 127,56 × 10²</div>
+                <div class="math">
+                    \[
+                    127,56 \times 10^2 = 127,56 \times 100 = 12.756
+                    \]
+                    \[
+                    12.756 = 1,2756 \times 10^4
+                    \]
+                </div>
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( 1,2756 \times 10^4 \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → Primeiro calculamos 127,56 × 100 = 12.756. Depois escrevemos em notação: 1,2756 × 10⁴
+                </p>
+            </div>
+
+            <!-- Subquestão c -->
+            <div class="subquestao">
+                <div class="letra">c) 0,0000034</div>
+                <div class="math">
+                    \[
+                    0,0000034 = 3,4 \times 10^{-6}
+                    \]
+                </div>
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( 3,4 \times 10^{-6} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → Deslocamos a vírgula 6 casas para a direita. Expoente negativo porque o número é menor que 1.
+                </p>
+            </div>
+
+            <!-- Subquestão d -->
+            <div class="subquestao">
+                <div class="letra">d) 134.000.000.000</div>
+                <div class="math">
+                    \[
+                    134.000.000.000 = 1,34 \times 10^{11}
+                    \]
+                </div>
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( 1,34 \times 10^{11} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → 134 bilhões = 1,34 × 10¹¹ (11 zeros após o 1,34)
+                </p>
+            </div>
+
+            <!-- Subquestão e -->
+            <div class="subquestao">
+                <div class="letra">e) 34100000</div>
+                <div class="math">
+                    \[
+                    34.100.000 = 3,41 \times 10^7
+                    \]
+                </div>
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( 3,41 \times 10^7 \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → 34.100.000 = 3,41 × 10⁷ (7 casas decimais deslocadas)
+                </p>
+            </div>
+
+            <!-- Subquestão f -->
+            <div class="subquestao">
+                <div class="letra">f) 0,00041</div>
+                <div class="math">
+                    \[
+                    0,00041 = 4,1 \times 10^{-4}
+                    \]
+                </div>
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( 4,1 \times 10^{-4} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → Deslocamos a vírgula 4 casas para a direita → expoente -4
+                </p>
+            </div>
+
+            <!-- Subquestão g -->
+            <div class="subquestao">
+                <div class="letra">g) 568200000000</div>
+                <div class="math">
+                    \[
+                    568.200.000.000 = 5,682 \times 10^{11}
+                    \]
+                </div>
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( 5,682 \times 10^{11} \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → 568,2 bilhões = 5,682 × 10¹¹
+                </p>
+            </div>
+
+            <!-- Subquestão h -->
+            <div class="subquestao">
+                <div class="letra">h) 203 milhões</div>
+                <div class="math">
+                    \[
+                    203 \text{ milhões} = 203 \times 10^6 = 2,03 \times 10^8
+                    \]
+                </div>
+                <div class="resposta-item">
+                    <strong>✅ Resposta:</strong> \( 2,03 \times 10^8 \)
+                </div>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                    → 1 milhão = 10⁶, então 203 milhões = 203 × 10⁶ = 2,03 × 10⁸
+                </p>
+            </div>
+
+            <!-- Dicas finais -->
+            <div class="dica">
+                <strong>💡 Dicas para escrever em notação científica:</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Números <strong>grandes</strong> (≥ 10) → expoente <strong>positivo</strong></li>
+                    <li>Números <strong>pequenos</strong> (&lt; 1) → expoente <strong>negativo</strong></li>
+                    <li>O expoente representa <strong>quantas casas a vírgula foi deslocada</strong></li>
+                    <li>O número \( a \) deve estar entre \( 1 \) e \( 10 \) (1 ≤ a < 10)</li>
+                    <li><strong>Milhão</strong> = \( 10^6 \), <strong>Bilhão</strong> = \( 10^9 \), <strong>Trilhão</strong> = \( 10^{12} \)</li>
+                </ul>
+            </div>
+
+            <!-- Tabela resumo -->
+            <div class="subquestao">
+                <strong>📊 Resumo das respostas:</strong>
+                <div class="math" style="margin-top: 10px;">
+                    \[
+                    \begin{array}{c|c}
+                    \text{Item} & \text{Notação Científica} \\
+                    \hline
+                    a) & 1,08 \times 10^8 \\
+                    b) & 1,2756 \times 10^4 \\
+                    c) & 3,4 \times 10^{-6} \\
+                    d) & 1,34 \times 10^{11} \\
+                    e) & 3,41 \times 10^7 \\
+                    f) & 4,1 \times 10^{-4} \\
+                    g) & 5,682 \times 10^{11} \\
+                    h) & 2,03 \times 10^8
+                    \end{array}
+                    \]
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>
