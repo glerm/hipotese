@@ -1,137 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Avaliação 01 - Fundamentos de Eletricidade e Eletrônica</title>
-
-<style>
-    body{
-        font-family: Arial, sans-serif;
-        max-width: 900px;
-        margin: 40px auto;
-        padding: 20px;
-        line-height: 1.6;
-    }
-
-    h1{
-        text-align: center;
-        margin-bottom: 5px;
-    }
-
-    h2{
-        text-align: center;
-        font-weight: normal;
-        margin-top: 0;
-        margin-bottom: 40px;
-    }
-
-    .questao{
-        margin-bottom: 50px;
-    }
-
-    .imagem{
-        text-align: center;
-        margin: 20px 0;
-    }
-
-    .imagem img{
-        max-width: 100%;
-        border: 1px solid #ccc;
-    }
-
-    .resposta{
-        border: 1px solid #999;
-        min-height: 180px;
-        margin-top: 15px;
-        padding: 10px;
-    }
-
-    .subquestao{
-        margin-left: 20px;
-        margin-top: 10px;
-    }
-
-    @media print{
-        .resposta{
-            min-height: 250px;
-        }
-    }
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hipotese</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<h1>Avaliação 01 de Fundamentos de Eletricidade e Eletrônica</h1>
-<h2>Prof. Guilherme Soares</h2>
-
-<div class="questao">
-
-    <h3>Questão 01</h3> <h5> valor 03 pontos </h5>
-
-    <p>
-        A partir da imagem abaixo, descreva o experimento que fizemos para entender
-        as propriedades básicas da eletricidade: <strong>Tensão</strong>,
-        <strong>Corrente</strong> e <strong>Resistência</strong>.
-    </p>
-
-    <div class="imagem">
-        <img src="img01.png" alt="Experimento de eletricidade">
+    <div class="container">
+        <div class="imagem-container"></div>
+        
+        <div class="terminal">
+            <img src="./logoHipoteseGlitch.gif"  width="600" height="200">
+            <div class="terminal-content" id="terminal-output">
+            </div>
+            <div class="input-line">
+                <span>(digite e tecle enter) #_</span><span class="cursor"></span> 
+                <input type="text" class="command-input" id="command-input" autofocus>
+            </div>
+        </div>
     </div>
 
-
-
-<div class="questao">
-
-    <h3>Questão 02</h3> 
-
-    <div class="subquestao">
-        <p>
-            <strong>a)</strong> A partir do desenho abaixo, descreva os experimentos
-            sonoros que fizemos com Arduino e compartilhe seu entendimento sobre a
-            diferença entre eletrônica analógica e digital a partir desta experiência.
-        </p> <h5> valor 02 pontos </h5>
-
-        <p>
-            <strong>b)</strong> Descreva detalhes do funcionamento da placa de protótipo
-            (protoboard) e as diferenças práticas que você observou em seu uso,
-            tanto no simulador quanto na prática presencial.
-        </p> <h5> valor 02 pontos </h5>
-    </div>
-
-    <div class="imagem">
-        <img src="img03.png" alt="Experimentos com Arduino">
-    </div>
- <div class="imagem">
-        <img src="p2.png" alt="Experimentos com Arduino" width=500>
-    </div>
-
-
-
-
-
-
-<div class="questao">
-
-    <h3>Questão 03</h3> <h5> valor 03 pontos </h5>
-
-    <p>
-        A partir dos esquemas abaixo, descreva seu entendimento sobre os conceitos de
-        <strong>Sample Rate</strong> e <strong>Bit Depth</strong> no processo de
-        digitalização de ondas sonoras.
-    </p>
-
-    <div class="imagem">
-        <img src="samplerate.png" alt="Esquema de Sample Rate">
-    </div>
-
-    <div class="imagem">
-        <img src="Bitdepth.png" alt="Esquema de Bit Depth">
-    </div>
-
-
-
-
-
+    <script src="responses.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
