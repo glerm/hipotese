@@ -38,11 +38,13 @@
           </p>
           <div class="actions">
             <a class="button" href="#publicacoes">Ver publicações</a>
-            <a class="button secondary" href="#projetos">Abrir projetos</a>
+            <a class="button secondary" href="#pesquisa">Abrir pesquisa</a>
           </div>
         </div>
-        <aside class="portrait-placeholder" aria-label="Área para imagem principal">
-          <span>imagem / retrato / colagem</span>
+        <aside class="portrait-placeholder" aria-label="Game of Life com X e O">
+          <canvas id="game-of-life" width="420" height="340">
+            Seu navegador não suporta canvas.
+          </canvas>
         </aside>
       </div>
     </section>
@@ -68,35 +70,18 @@
         <span class="window-title">pesquisa.db</span>
         <span class="window-controls">□ □ ×</span>
       </div>
-      <div class="window-content cards">
-        <article class="card">
-          <h3>Game Studies e artemídia</h3>
-          <p>Videogames, experiência estética, proceduralidade, interfaces e práticas pós-gamer.</p>
-        </article>
-        <article class="card">
-          <h3>Música e tecnologia</h3>
-          <p>Arte sonora, instrumentos digitais, computação física, improvisação e live coding.</p>
-        </article>
-        <article class="card">
-          <h3>Imagem, IA e arquivo</h3>
-          <p>Prompt art, autoria coletiva, estruturas visuais, segmentação e Motor de Engenharia Reversa.</p>
-        </article>
+      <div class="window-content pesquisa-frame-wrapper">
+        <iframe
+          class="pesquisa-frame"
+          src="pesquisa.html"
+          title="Áreas de pesquisa"
+          loading="lazy"
+          scrolling="no">
+        </iframe>
       </div>
     </section>
 
-    <section id="projetos" class="window">
-      <div class="window-bar">
-        <span class="window-title">projetos/</span>
-        <span class="window-controls">□ □ ×</span>
-      </div>
-      <div class="window-content folder-grid">
-        <a class="folder" href="#">LabOgam</a>
-        <a class="folder" href="#">Matema</a>
-        <a class="folder" href="#">MetaReciclagem</a>
-        <a class="folder" href="#">Oficinas</a>
-        <a class="folder" href="#">Motor de Engenharia Reversa</a>
-      </div>
-    </section>
+    
 
     <section id="publicacoes" class="window">
       <div class="window-bar">
@@ -138,5 +123,6 @@
   <footer class="footer">
     <p>© Guilherme Soares / Glerm Soares · arquivo em construção</p>
   </footer>
+  <script src="assets/js/game-of-life.js"></script>
 </body>
 </html>

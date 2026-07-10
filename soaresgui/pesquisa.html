@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pesquisa</title>
+  <style>
+    :root {
+      --paper: #f8f6ef;
+      --text: #000000;
+      --border: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: transparent;
+      color: var(--text);
+      font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+
+    .pesquisa-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .pesquisa-card {
+      min-width: 0;
+      padding: 1.25rem;
+      background: var(--paper);
+      border: 2px solid var(--border);
+    }
+
+    .pesquisa-card h3 {
+      margin: 0 0 .75rem;
+      font-size: 1.25rem;
+      line-height: 1.05;
+      letter-spacing: -.04em;
+    }
+
+    .pesquisa-card p {
+      margin: 0;
+    }
+
+    @media (max-width: 820px) {
+      html,
+      body {
+        overflow: visible;
+      }
+
+      .pesquisa-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="pesquisa-grid">
+    <div class="pesquisa-card">
+      <h3>Tese</h3>
+      <p>
+        Pesquisa de doutorado dedicada às relações entre arte, tecnologia,
+        jogos, imaginação técnica e processos de criação mediados por software.
+      </p>
+    </div>
+
+    <div class="pesquisa-card">
+      <h3>Dissertação</h3>
+      <p>
+        Trabalho de mestrado voltado à investigação de práticas artísticas e
+        culturais ligadas à música, às mídias digitais e à apropriação crítica
+        da tecnologia.
+      </p>
+    </div>
+
+    <div class="pesquisa-card">
+      <h3>Artigos</h3>
+      <p>
+        Conjunto de publicações acadêmicas sobre game studies, artemídia,
+        programação criativa, arte sonora, interfaces, inteligência artificial
+        e cultura digital.
+      </p>
+    </div>
+
+    <div class="pesquisa-card">
+      <h3>Projetos</h3>
+      <p>
+        Projetos de pesquisa, extensão e criação artística, incluindo LabOgam, Matema, MetaReciclagem e o Motor de Engenharia Reversa.
+      </p>
+    </div>
+  </main>
+</body>
+</html>
