@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeria · Guilherme Soares / Glerm Soares</title>
+  <meta name="description" content="Galeria de imagens do website de Guilherme Soares / Glerm Soares." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-symbol">▣</span>
+      <a href="index.html">Guilherme Soares / Glerm Soares</a>
+    </div>
+    <nav class="menu" aria-label="Menu principal">
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#projetos">Projetos</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="admin-imagens.html">Admin imagens</a>
+    </nav>
+  </header>
+
+  <main class="desktop">
+    <section class="window hero compact-hero">
+      <div class="window-bar">
+        <span class="window-title">galeria.json</span>
+        <span class="window-controls">□ □ ×</span>
+      </div>
+      <div class="window-content">
+        <p class="eyebrow">arquivo visual</p>
+        <h1>Galeria</h1>
+        <p class="lead">Imagens carregadas a partir de <code>data/images.json</code>.</p>
+      </div>
+    </section>
+
+    <section class="window">
+      <div class="window-bar">
+        <span class="window-title">imagens/</span>
+        <span class="window-controls">□ □ ×</span>
+      </div>
+      <div class="window-content gallery-grid" id="galleryGrid">
+        <p class="notice">Carregando galeria...</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    async function loadGallery() {
+      const grid = document.querySelector('#galleryGrid');
+      try {
+        const response = await fetch('data/images.json');
+        if (!response.ok) throw new Error('Arquivo data/images.json ainda não publicado.');
+        const images = await response.json();
+        if (!images.length) {
+          grid.innerHTML = '<p class="notice">Nenhuma imagem cadastrada ainda.</p>';
+          return;
+        }
+        grid.innerHTML = images.map(image => `
+          <article class="gallery-card">
+            <img src="${image.file}" alt="${image.alt || image.title}" loading="lazy" />
+            <div>
+              <h3>${image.title}</h3>
+              <p>${image.description || ''}</p>
+              <p class="meta-line">${image.section || 'Arquivo'} · ${image.year || 's/d'} · <a href="${image.page}">abrir página relacionada</a></p>
+            </div>
+          </article>
+        `).join('');
+      } catch (error) {
+        grid.innerHTML = `<p class="notice">${error.message}</p>`;
+      }
+    }
+    loadGallery();
+  </script>
+</body>
+</html>

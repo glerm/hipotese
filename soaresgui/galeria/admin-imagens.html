@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin de imagens · Guilherme Soares / Glerm Soares</title>
+  <meta name="description" content="Página local para organizar imagens e metadados do website de Guilherme Soares / Glerm Soares." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-symbol">▣</span>
+      <a href="index.html">Guilherme Soares / Glerm Soares</a>
+    </div>
+    <nav class="menu" aria-label="Menu principal">
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#projetos">Projetos</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="admin-imagens.html">Admin imagens</a>
+    </nav>
+  </header>
+
+  <main class="desktop">
+    <section class="window hero compact-hero" aria-labelledby="titulo-admin">
+      <div class="window-bar">
+        <span class="window-title">admin_imagens.app</span>
+        <span class="window-controls">□ □ ×</span>
+      </div>
+      <div class="window-content">
+        <p class="eyebrow">organização de acervo visual</p>
+        <h1 id="titulo-admin">Uploads e metadados</h1>
+        <p class="lead">
+          Cadastre imagens, pré-visualize arquivos locais, organize metadados e exporte um arquivo
+          <code>data/images.json</code> para ligar cada imagem à página correta do website.
+        </p>
+        <p class="notice">
+          No GitHub Pages, esta página não salva arquivos automaticamente no servidor. Coloque as imagens em
+          <code>assets/img/</code>, exporte o JSON e publique os dois no repositório.
+        </p>
+      </div>
+    </section>
+
+    <section class="window">
+      <div class="window-bar">
+        <span class="window-title">novo_registro.form</span>
+        <span class="window-controls">□ □ ×</span>
+      </div>
+      <div class="window-content admin-layout">
+        <form id="imageForm" class="metadata-form">
+          <div class="form-row full">
+            <label for="imageFile">Imagem local para pré-visualização</label>
+            <input type="file" id="imageFile" accept="image/*" />
+            <small>Use para gerar a prévia. Depois publique esse arquivo em <code>assets/img/</code>.</small>
+          </div>
+
+          <div class="form-row">
+            <label for="fileName">Nome do arquivo publicado</label>
+            <input type="text" id="fileName" placeholder="labogam-oficina-01.jpg" required />
+          </div>
+
+          <div class="form-row">
+            <label for="title">Título</label>
+            <input type="text" id="title" placeholder="Oficina LabOgam" required />
+          </div>
+
+          <div class="form-row">
+            <label for="page">Página associada</label>
+            <select id="page" required>
+              <option value="index.html">Home</option>
+              <option value="sobre.html">Sobre</option>
+              <option value="projetos.html">Projetos</option>
+              <option value="publicacoes.html">Publicações</option>
+              <option value="ensino.html">Ensino</option>
+              <option value="musica.html">Música / Arte Sonora</option>
+              <option value="arquivo.html">Arquivo</option>
+              <option value="galeria.html">Galeria</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="section">Seção / projeto</label>
+            <input type="text" id="section" placeholder="LabOgam, Matema, MetaReciclagem..." />
+          </div>
+
+          <div class="form-row">
+            <label for="year">Ano</label>
+            <input type="number" id="year" min="1990" max="2100" placeholder="2026" />
+          </div>
+
+          <div class="form-row">
+            <label for="location">Local</label>
+            <input type="text" id="location" placeholder="CECULT-UFRB, Santo Amaro, BA" />
+          </div>
+
+          <div class="form-row full">
+            <label for="description">Descrição / legenda</label>
+            <textarea id="description" rows="4" placeholder="Descreva o contexto, pessoas, oficina, projeto, técnica ou situação documentada."></textarea>
+          </div>
+
+          <div class="form-row full">
+            <label for="tags">Tags</label>
+            <input type="text" id="tags" placeholder="arte sonora, programação criativa, oficina, arduino" />
+            <small>Separe por vírgulas.</small>
+          </div>
+
+          <div class="form-row full">
+            <label for="credit">Crédito / autoria da foto</label>
+            <input type="text" id="credit" placeholder="Foto: nome da pessoa / acervo pessoal" />
+          </div>
+
+          <div class="form-actions full">
+            <button class="button" type="submit">Adicionar registro</button>
+            <button class="button secondary" type="button" id="clearForm">Limpar formulário</button>
+          </div>
+        </form>
+
+        <aside class="preview-panel">
+          <div class="image-preview" id="imagePreview">
+            <span>prévia da imagem</span>
+          </div>
+          <p class="preview-caption" id="previewCaption">Nenhuma imagem selecionada.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="window">
+      <div class="window-bar">
+        <span class="window-title">data/images.json</span>
+        <span class="window-controls">□ □ ×</span>
+      </div>
+      <div class="window-content">
+        <div class="toolbar">
+          <button class="button" type="button" id="exportJson">Exportar JSON</button>
+          <button class="button secondary" type="button" id="copyJson">Copiar JSON</button>
+          <button class="button secondary" type="button" id="importJson">Importar JSON</button>
+          <button class="button danger" type="button" id="clearAll">Apagar lista local</button>
+        </div>
+        <input type="file" id="jsonFile" accept="application/json" hidden />
+        <textarea id="jsonOutput" class="json-output" rows="12" spellcheck="false" aria-label="Saída JSON"></textarea>
+      </div>
+    </section>
+
+    <section class="window">
+      <div class="window-bar">
+        <span class="window-title">registros_em_memoria.table</span>
+        <span class="window-controls">□ □ ×</span>
+      </div>
+      <div class="window-content">
+        <div id="recordsList" class="records-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© Guilherme Soares / Glerm Soares · ferramenta local de organização de imagens</p>
+  </footer>
+
+  <script src="assets/js/image-admin.js"></script>
+</body>
+</html>
