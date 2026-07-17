@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editor local da timeline</title>
+  <style>
+    :root { font-family: Arial, sans-serif; color: #171717; background: #ededed; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    header { background: #111; color: #fff; padding: 18px 24px; display:flex; justify-content:space-between; gap:16px; align-items:center; }
+    header h1 { font-size: 18px; margin: 0; }
+    header a { color:#fff; }
+    main { max-width: 1100px; margin: 24px auto; padding: 0 16px 48px; }
+    .panel { background:#fff; border:1px solid #bbb; box-shadow:4px 4px 0 #aaa; margin-bottom:24px; }
+    .bar { background:#111; color:#fff; padding:8px 12px; font-family:monospace; }
+    .content { padding:18px; }
+    form.grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .wide { grid-column:1 / -1; }
+    label { display:block; font-weight:bold; margin-bottom:5px; }
+    input, select, textarea { width:100%; padding:10px; border:1px solid #999; font:inherit; }
+    textarea { min-height:110px; resize:vertical; }
+    button, .button { border:1px solid #111; background:#111; color:#fff; padding:10px 14px; cursor:pointer; text-decoration:none; display:inline-block; }
+    button.secondary, .button.secondary { background:#fff; color:#111; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    .flash { padding:12px; margin-bottom:12px; border:1px solid; background:#fff; }
+    .flash.success { border-color:#167a34; }
+    .flash.error { border-color:#b21e2b; }
+    .section { margin-top:24px; }
+    .entry { border-top:1px solid #ccc; padding:14px 0; display:grid; grid-template-columns:110px 1fr auto; gap:14px; align-items:start; }
+    .entry:first-child { border-top:0; }
+    .entry time { font-family:monospace; font-weight:bold; }
+    .entry h3 { margin:0 0 6px; }
+    .entry p { margin:0; line-height:1.45; }
+    .thumb { width:100px; height:70px; object-fit:cover; border:1px solid #aaa; margin-top:8px; }
+    .empty { color:#666; font-style:italic; }
+    @media (max-width:700px) {
+      form.grid { grid-template-columns:1fr; }
+      .wide { grid-column:auto; }
+      .entry { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>editor_timeline.local</h1>
+  <a href="{{ url_for('view_site') }}" target="_blank">Abrir site</a>
+</header>
+<main>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <div class="flash {{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endwith %}
+
+  <section class="panel">
+    <div class="bar">nova_entrada.form</div>
+    <div class="content">
+      <form class="grid" method="post" action="{{ url_for('add_entry') }}" enctype="multipart/form-data">
+        <div>
+          <label for="section">Seção</label>
+          <select id="section" name="section" required>
+            {% for key, label in labels.items() %}<option value="{{ key }}">{{ label }}</option>{% endfor %}
+          </select>
+        </div>
+        <div>
+          <label for="date">Mês e ano</label>
+          <input id="date" name="date" type="month" required>
+        </div>
+        <div class="wide">
+          <label for="title">Título</label>
+          <input id="title" name="title" required>
+        </div>
+        <div class="wide">
+          <label for="description">Descrição</label>
+          <textarea id="description" name="description" required></textarea>
+        </div>
+        <div>
+          <label for="link">Link opcional</label>
+          <input id="link" name="link" type="url" placeholder="https://...">
+        </div>
+        <div>
+          <label for="image">Thumbnail opcional</label>
+          <input id="image" name="image" type="file" accept=".png,.jpg,.jpeg,.gif,.webp">
+        </div>
+        <div class="wide">
+          <label for="alt">Texto alternativo da imagem</label>
+          <input id="alt" name="alt" placeholder="Descrição acessível da imagem">
+        </div>
+        <div class="wide actions">
+          <button type="submit">Adicionar e atualizar site</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="bar">entradas.json</div>
+    <div class="content">
+      <form method="post" action="{{ url_for('regenerate') }}" class="actions">
+        <button class="secondary" type="submit">Gerar index.html novamente</button>
+      </form>
+
+      {% for key, label in labels.items() %}
+        <div class="section">
+          <h2>{{ label }}</h2>
+          {% set entries = data[key] | sort(attribute='date', reverse=true) %}
+          {% if entries %}
+            {% for entry in entries %}
+              <article class="entry">
+                <time>{{ entry.month }}<br>{{ entry.year }}</time>
+                <div>
+                  <h3>{{ entry.title }}</h3>
+                  <p>{{ entry.description }}</p>
+                  {% if entry.image %}<img class="thumb" src="/{{ entry.image }}" alt="{{ entry.alt }}">{% endif %}
+                </div>
+                <form method="post" action="{{ url_for('delete_entry', entry_id=entry.id) }}" onsubmit="return confirm('Excluir esta entrada?')">
+                  <button class="secondary" type="submit">Excluir</button>
+                </form>
+              </article>
+            {% endfor %}
+          {% else %}
+            <p class="empty">Nenhuma entrada.</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,106 @@
+{
+  "publicacoes": [
+    {
+      "id": "779a2d99df3749cab2d9cc17f4cb739e",
+      "date": "2024-07",
+      "month": "JUL",
+      "year": 2024,
+      "title": "SUCO DE JOYSTICK: aproximações conceituais para uma teoria da mecânica-narrativa",
+      "description": "In: 33° Encontro Anual da COMPÓS, 2024, Balneário Camboriú SC.  Anais do 33° Encontro Anual da COMPÓS. 2024,",
+      "link": "https://proceedings.science/compos/compos-2024/trabalhos/suco-de-joystick-aproximacoes-conceituais-para-uma-teoria-da-mecanica-narrativa?lang=pt-br",
+      "image": "assets/img/thumbs/pitfall.png",
+      "alt": "SUCO DE JOYSTICK: aproximações conceituais para uma teoria da mecânica-narrativa"
+    },
+    {
+      "id": "9ed11892d26d4425aef7486869def8ce",
+      "date": "2026-05",
+      "month": "MAI",
+      "year": 2026,
+      "title": "Música Pós-Humana Desalmada: codificação criativa da música e trilha sonora feita nas novas plataformas de IA.",
+      "description": "Este artigo discute as transformações da Composição Assistida por Computador (CAC)\r\ndiante da popularização de sistemas de geração musical por inteligência artificial como Suno\r\ne Udio. A partir de uma genealogia que conecta composição algorítmica, live coding e\r\ncodificação criativa, argumenta-se que o paradigma do prompt amplia o acesso à criação\r\nmusical, mas como efeito colateral simplifica, prioriza e potencializa clichês dos processos\r\ncomposicionais. Em contraponto às plataformas comerciais, são analisados ecossistemas\r\nabertos como Magenta.js e Hugging Face, entendidos como infraestruturas de\r\ncompartilhamento de modelos, código e experimentos musicais. Conclui-se que uma\r\narqueologia dessas plataformas pode contribuir para a compreensão das transformações\r\ncontemporâneas da criatividade computacional.",
+      "link": "https://files.cercomp.ufg.br/weby/up/777/o/Musica_Pos-Humana_Desalmada__codificac%CC%A7ao_criativa_da_musica_e_trilha_sonora_feita_nas_novas_plataformas_de_IA.docx_%282%29.pdf",
+      "image": "assets/img/thumbs/2026-05-musica-pos-humana-desalmada-codificacao-7170b773.png",
+      "alt": "Música Pós-Humana Desalmada: codificação criativa da música e trilha sonora feita nas novas plataformas de IA."
+    },
+    {
+      "id": "1bd07878da4f4513b1fa853e8984008d",
+      "date": "2019-06",
+      "month": "JUN",
+      "year": 2019,
+      "title": "An interactive audio player and composition system for collaborative experimental music netlabels.",
+      "description": "In: NIME - Proceedings of the International Conference on New Interfaces for Musical Expression",
+      "link": "https://www.nime.org/proceedings/2019/nime2019_paper034.pdf",
+      "image": "assets/img/thumbs/2019-06-an-interactive-audio-player-and-99349e47.png",
+      "alt": "An interactive audio player and composition system for collaborative experimental music netlabels."
+    },
+    {
+      "id": "8a3d3c72ca824c95970a2ff2481b8bf4",
+      "date": "2025-07",
+      "month": "JUL",
+      "year": 2025,
+      "title": "Depois dos Videogames: Imaginário e tecnopolítica para uma artemídia pós-gamer",
+      "description": "Concluindo com um experimento pedagógico de carpintaria filosófica para convergência destas duas categorias, propomos aqui a busca por uma tensão constante entre o \"tempo da escrita artesanal\" - com seu valor afetivo - e o \"tempo pragmático dos códigos\" - com seu valor de otimização produtiva. Esta abordagem almeja que o processo criativo e a imaginação tecnopolítica não se percam na sedução da eficiência automatizada, propondo assim um caminho alternativo para um retorno de utopias que inspirem novas mídias imaginárias.",
+      "link": "https://www.bdtd.uerj.br:8443/handle/1/24833",
+      "image": "assets/img/thumbs/2025-07-depois-dos-videogames-imaginario-e-5dd2631a.png",
+      "alt": "Depois dos Videogames: Imaginário e tecnopolítica para uma artemídia pós-gamer"
+    },
+    {
+      "id": "81452fd1d5a842de9d54735d0ee88626",
+      "date": "2016-11",
+      "month": "NOV",
+      "year": 2016,
+      "title": "TPMVs - Viral Error Aesthetics and Chaos Informational from recycling YouTube memes as new form of Video Music.",
+      "description": "This article presents the cultural phenomenon YouTubePoopMusicVideo describing some techniques used by poopers community as audio distortion of use, databending, remixing and assembly of  new narratives with radical manipulations of loops and overlapping audio and video layers. Are carried out some conceptual approaches to spectromorphology, the aesthetics of the error and the appointment of \r\npossible references of poops. After presents a comparative analysis of poops seeking reveal idiomatic features of the style. Finally are listed some strategies that go towards a language appropriation for audiovisual experimentation context with open source.",
+      "link": "https://sonologia2016.eca.usp.br/wp-content/uploads/2017/09/Sonologia2016_OutofPhase.pdf",
+      "image": "assets/img/thumbs/2016-11-tpmvs-viral-error-aesthetics-and-chaos-71b1035b.png",
+      "alt": "TPMVs - Viral Error Aesthetics and Chaos Informational from recycling YouTube memes as new form of Video Music."
+    },
+    {
+      "id": "6ad0aa4507504d82b67df363ad28af9f",
+      "date": "2022-11",
+      "month": "NOV",
+      "year": 2022,
+      "title": "Mecânicas da codificação como elemento da jogabilidade: um estudo inicial sobre ludicidade em narrativas de programação de computadores",
+      "description": "Contextualizamos as problematizações de alguns jogos digitais que propõem o uso da programação como elemento diegético na mecânica e estética de suas jogabilidades. Comparando estes exemplos e a aplicação de conceitos, buscamos aqui uma reflexão sobre ludicidade na prática de programação de computadores como elemento da jogabilidade, como poética e como base de uma rotina de pesquisa que aproxima artes, novas mídias e letramento digital.",
+      "link": "https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/23704",
+      "image": "assets/img/thumbs/2022-11-mecanicas-da-codificacao-como-elemento-da-a54efe07.jpeg",
+      "alt": "Mecânicas da codificação como elemento da jogabilidade: um estudo inicial sobre ludicidade em narrativas de programação de computadores"
+    },
+    {
+      "id": "b0a8f1d290c24014a015ab167588dcfd",
+      "date": "2023-07",
+      "month": "JUL",
+      "year": 2023,
+      "title": "Um espectro ronda o metaverso o espectro do código aberto",
+      "description": "Este estudo busca mapear e refletir sobre dois momentos antagônicos de uma perspectiva essencial para a teoria das mídias. Da nostalgia dos anos iniciais da Media Art (ou Artemídia) até a melancolia de uma fase mais apática da cibercultura, inspirados pelos conceitos de hauntologia e realismo capitalista de Mark Fisher. Construímos com este ensaio uma abertura alternativa ao metaverso corporativo gamer, uma nova utopia em formação: carpintaria filosófica do código aberto, com ênfase nas mídias imaginárias e ficções interativas.",
+      "link": "https://revistas.intercom.org.br/index.php/insolita/pt_BR/article/view/4613",
+      "image": "assets/img/thumbs/2023-07-um-espectro-ronda-o-metaverso-o-espectro-264e88ce.png",
+      "alt": "Um espectro ronda o metaverso o espectro do código aberto"
+    },
+    {
+      "id": "f33104434f534181bb9d8393632f93de",
+      "date": "2012-01",
+      "month": "JAN",
+      "year": 2012,
+      "title": "Lastro Phreaker apruma orlas de device drivers. Facta - Revista de Gambiologia, ,",
+      "description": "A primeira década do movimento dos Sem Satélite. Uma década depois do manifesto original. O que é o Movimento dos Sem Satélite? Escrevo de um ponto equidistante desta trajetória. De um Não-Lugar que não se aponta no Global Position System dos protocolos industrializados. Um desinteresse pragmático por uma tecnocracia que ainda assim está aqui a publicar-nos, a localizar-nos, a significar-nos, No velho sistema de calendários, fronteiras, lastro. Um desinteresse simulado? Bailar sobre os astros sem sair do lugar - quem ainda pode flutuar? Nós somos um ponto de vista singular dentro da cultura Phreaker que dentro das B.B.S. dos primeiros modems elegeu por seleção natural a camada TCP/IP como língua franca. Protocolos como IRC, como um porto-seguro para aplicar o Teste de Turing em qualquer nova gíria que pudesse sugerir a chegada de uma nova geração de autômatos.",
+      "link": "https://archive.neural.it/init/default/show/2733",
+      "image": "assets/img/thumbs/2012-01-lastro-phreaker-apruma-orlas-de-device-ab59b356.jpg",
+      "alt": "Lastro Phreaker apruma orlas de device drivers. Facta - Revista de Gambiologia, ,"
+    }
+  ],
+  "projetos": [
+    {
+      "id": "d56d287f188f4a338f0de2076edb5950",
+      "date": "2015-07",
+      "month": "JUL",
+      "year": 2015,
+      "title": "Catatau - justa razão aqui delira - Criptodramaturgia",
+      "description": "Um aspecto do espetáculo que se tornou possível através da “criptodramaturgia” é o canone de Occam, texto que reúne as 61 ocorrências deste termo ao longo da obra e suas vizinhanças (150 letras para trás e para diante de cada “bip” desta mensagem código). Occam, além da figura histórica do monge-filósofo nominalista e autor de um tratado de lógica é também, para Leminski, o monstro semiótico perturbador da linguagem, aquele que ao se mover faz as sílabas saltarem umas sobre as outras e as letras espirrarem para fora das frases como um abalo sísmico da linguagem.",
+      "link": "https://olharcomum.wordpress.com/2015/07/03/catatau-a-justa-razao-aqui-delira-teatro-novelas-curitibanas/",
+      "image": "assets/img/thumbs/2015-07-catatau-justa-razao-aqui-delira-b340cbcf.webp",
+      "alt": "Catatau - justa razão aqui delira - Criptodramaturgia"
+    }
+  ],
+  "rascunhos": []
+}
