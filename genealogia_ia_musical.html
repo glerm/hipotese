@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Genealogia da IA Musical — projetos e representações</title>
+<style>
+:root {
+  --bg:#f3f0e8; --paper:#fffdfa; --ink:#171716; --muted:#68645d;
+  --line:#d8d2c5; --accent:#315f50; --accent2:#94553c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,sans-serif;line-height:1.45}
+header{padding:52px 5vw 30px;background:linear-gradient(135deg,#fffdfa,#ece6da);border-bottom:1px solid var(--line)}
+.kicker{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800;color:var(--accent)}
+h1{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:clamp(2.2rem,5vw,4.8rem);font-weight:500;line-height:1;margin:.35rem 0 1rem;max-width:1050px}
+.lead{max-width:920px;color:var(--muted);font-size:1.05rem}
+.controls{position:sticky;top:0;z-index:10;display:flex;gap:.7rem;flex-wrap:wrap;padding:13px 5vw;background:rgba(243,240,232,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+input,select,button{font:inherit;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:.72rem 1rem;color:var(--ink)}
+input{flex:1;min-width:260px}
+button{cursor:pointer} button:hover{border-color:var(--accent);color:var(--accent)}
+main{padding:30px 5vw 70px}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:24px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px}
+.card b{display:block;font-size:1.5rem;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+.table-wrap{overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 30px rgba(30,25,18,.05)}
+table{border-collapse:collapse;width:100%;min-width:1260px}
+th{position:sticky;top:63px;z-index:3;background:#e8e2d5;text-align:left;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;padding:13px 12px;border-bottom:1px solid var(--line)}
+td{padding:14px 12px;border-bottom:1px solid #e8e3d9;vertical-align:top}
+tbody tr:hover{background:#faf7f1}
+.branch-label{font-size:.8rem;font-weight:800;color:var(--accent);display:inline-block;max-width:180px}
+.year{white-space:nowrap;font-variant-numeric:tabular-nums}
+.refs{display:flex;flex-wrap:wrap;gap:.38rem;min-width:220px}
+.ref{display:inline-block;text-decoration:none;color:var(--ink);font-size:.76rem;border:1px solid var(--line);border-radius:999px;padding:.3rem .56rem;background:white}
+.ref:hover{border-color:var(--accent2);color:var(--accent2)}
+.note{margin-top:22px;background:#ebe6dc;border:1px solid var(--line);border-radius:14px;padding:18px;color:#504d46}
+.hidden{display:none}
+footer{padding:22px 5vw;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+@media(max-width:760px){header{padding-top:34px}.controls{position:static}th{top:0}}
+@media print{.controls{display:none}body{background:white}.table-wrap{box-shadow:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">Música Pós-Humana · mapa de projetos e referências</div>
+  <h1>Genealogia da IA musical</h1>
+  <p class="lead">
+    Mapa bibliográfico em arquivo único, organizado por regimes de representação,
+    arquiteturas e formas de interação. Cada projeto possui links diretos para artigos,
+    documentação, código, modelos ou páginas institucionais. A genealogia deve ser lida
+    como uma rede de sobreposições, bifurcações e retornos — não como uma evolução linear.
+  </p>
+</header>
+
+<section class="controls" aria-label="Filtros">
+  <input id="search" type="search" placeholder="Buscar modelo, conceito, token, espectrograma, MIDI…">
+  <select id="branch">
+    <option value="">Todos os ramos</option>
+    <option value="1. Representação simbólica">1. Representação simbólica</option>
+<option value="2. Representação do sinal">2. Representação do sinal</option>
+<option value="3. Representação latente">3. Representação latente</option>
+<option value="4. Codecs e tokens discretos">4. Codecs e tokens discretos</option>
+<option value="5. Música como linguagem multimodal">5. Música como linguagem multimodal</option>
+<option value="6. Representação interacional">6. Representação interacional</option>
+<option value="7. Codificação criativa transversal">7. Codificação criativa transversal</option>
+<option value="8. Canção longa e modelos fundacionais">8. Canção longa e modelos fundacionais</option>
+<option value="9. Plataformas e geração em tempo real">9. Plataformas e geração em tempo real</option>
+  </select>
+  <button id="clear" type="button">Limpar</button>
+</section>
+
+<main>
+  <div class="summary">
+    <div class="card"><b id="visibleCount">0</b> itens visíveis</div>
+    <div class="card"><b id="branchCount">0</b> ramos</div>
+    <div class="card"><b id="linkCount">0</b> links de referência</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Ramo</th>
+          <th>Modelo / conceito</th>
+          <th>Ano</th>
+          <th>Unidade representacional</th>
+          <th>Função genealógica</th>
+          <th>Referências navegáveis</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      <tr data-branch="1. Representação simbólica" data-key="1. representação simbólica midi 1983 eventos: nota, duração, velocidade, canal protocolo que estabiliza a música como sequência de eventos controláveis, separando instrução musical e síntese sonora.">
+        <td><span class="branch-label">1. Representação simbólica</span></td>
+        <td><strong>MIDI</strong></td>
+        <td class="year">1983</td>
+        <td>Eventos: nota, duração, velocidade, canal</td>
+        <td>Protocolo que estabiliza a música como sequência de eventos controláveis, separando instrução musical e síntese sonora.</td>
+        <td><div class="refs"><a class="ref" href="https://midi.org/specifications" target="_blank" rel="noopener noreferrer">Especificação MIDI ↗</a></div></td>
+      </tr>
+      <tr data-branch="1. Representação simbólica" data-key="1. representação simbólica musicxml 2004 notação musical estruturada em xml representa partitura, duração, altura, articulação, compassos e relações editoriais em formato intercambiável.">
+        <td><span class="branch-label">1. Representação simbólica</span></td>
+        <td><strong>MusicXML</strong></td>
+        <td class="year">2004</td>
+        <td>Notação musical estruturada em XML</td>
+        <td>Representa partitura, duração, altura, articulação, compassos e relações editoriais em formato intercambiável.</td>
+        <td><div class="refs"><a class="ref" href="https://www.w3.org/2021/06/musicxml40/" target="_blank" rel="noopener noreferrer">MusicXML ↗</a></div></td>
+      </tr>
+      <tr data-branch="1. Representação simbólica" data-key="1. representação simbólica abc notation c. 1991 texto alfanumérico de partitura converte elementos musicais em sintaxe textual compacta; tornou-se relevante para modelos que tratam música como linguagem.">
+        <td><span class="branch-label">1. Representação simbólica</span></td>
+        <td><strong>ABC notation</strong></td>
+        <td class="year">c. 1991</td>
+        <td>Texto alfanumérico de partitura</td>
+        <td>Converte elementos musicais em sintaxe textual compacta; tornou-se relevante para modelos que tratam música como linguagem.</td>
+        <td><div class="refs"><a class="ref" href="https://abcnotation.com/wiki/abc:standard:v2.1" target="_blank" rel="noopener noreferrer">ABC Standard ↗</a> <a class="ref" href="https://arxiv.org/abs/2404.06393" target="_blank" rel="noopener noreferrer">MuPT ↗</a></div></td>
+      </tr>
+      <tr data-branch="1. Representação simbólica" data-key="1. representação simbólica illiac suite 1957 notas e regras formais marco da composição algorítmica computacional baseada em regras, seleção e restrições musicais explícitas.">
+        <td><span class="branch-label">1. Representação simbólica</span></td>
+        <td><strong>Illiac Suite</strong></td>
+        <td class="year">1957</td>
+        <td>Notas e regras formais</td>
+        <td>Marco da composição algorítmica computacional baseada em regras, seleção e restrições musicais explícitas.</td>
+        <td><div class="refs"><a class="ref" href="https://search.worldcat.org/title/experimental-music-composition-with-an-electronic-computer/oclc/423875" target="_blank" rel="noopener noreferrer">Hiller &amp; Isaacson — catálogo ↗</a></div></td>
+      </tr>
+      <tr data-branch="1. Representação simbólica" data-key="1. representação simbólica emi — experiments in musical intelligence 1980s–1990s padrões, assinaturas e recombinação estilística exemplo central da passagem de regras fixas para análise e recombinação computacional de repertórios.">
+        <td><span class="branch-label">1. Representação simbólica</span></td>
+        <td><strong>EMI — Experiments in Musical Intelligence</strong></td>
+        <td class="year">1980s–1990s</td>
+        <td>Padrões, assinaturas e recombinação estilística</td>
+        <td>Exemplo central da passagem de regras fixas para análise e recombinação computacional de repertórios.</td>
+        <td><div class="refs"><a class="ref" href="https://artsites.ucsc.edu/faculty/cope/experiments.htm" target="_blank" rel="noopener noreferrer">David Cope — EMI ↗</a></div></td>
+      </tr>
+      <tr data-branch="1. Representação simbólica" data-key="1. representação simbólica musicvae 2018 sequências midi em espaço latente combina representação simbólica e vae para reconstrução, interpolação e geração de frases musicais.">
+        <td><span class="branch-label">1. Representação simbólica</span></td>
+        <td><strong>MusicVAE</strong></td>
+        <td class="year">2018</td>
+        <td>Sequências MIDI em espaço latente</td>
+        <td>Combina representação simbólica e VAE para reconstrução, interpolação e geração de frases musicais.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/1803.05428" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://magenta.tensorflow.org/music-vae" target="_blank" rel="noopener noreferrer">Magenta ↗</a></div></td>
+      </tr>
+      <tr data-branch="1. Representação simbólica" data-key="1. representação simbólica music transformer 2018 tokens midi baseados em eventos aplica atenção relativa a sequências musicais longas, buscando estrutura temporal de longo alcance.">
+        <td><span class="branch-label">1. Representação simbólica</span></td>
+        <td><strong>Music Transformer</strong></td>
+        <td class="year">2018</td>
+        <td>Tokens MIDI baseados em eventos</td>
+        <td>Aplica atenção relativa a sequências musicais longas, buscando estrutura temporal de longo alcance.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/1809.04281" target="_blank" rel="noopener noreferrer">Paper ↗</a></div></td>
+      </tr>
+      <tr data-branch="1. Representação simbólica" data-key="1. representação simbólica pop music transformer / remi 2020 eventos musicais organizados por compasso e posição refina a tokenização midi com uma gramática orientada a pulso, compasso, andamento e acordes.">
+        <td><span class="branch-label">1. Representação simbólica</span></td>
+        <td><strong>Pop Music Transformer / REMI</strong></td>
+        <td class="year">2020</td>
+        <td>Eventos musicais organizados por compasso e posição</td>
+        <td>Refina a tokenização MIDI com uma gramática orientada a pulso, compasso, andamento e acordes.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2002.00212" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://github.com/YatingMusic/remi" target="_blank" rel="noopener noreferrer">Código ↗</a></div></td>
+      </tr>
+      <tr data-branch="2. Representação do sinal" data-key="2. representação do sinal pcm / waveform século xx amostras de amplitude no tempo representação digital direta da onda sonora; não pressupõe notas, instrumentos ou estruturas musicais.">
+        <td><span class="branch-label">2. Representação do sinal</span></td>
+        <td><strong>PCM / waveform</strong></td>
+        <td class="year">século XX</td>
+        <td>Amostras de amplitude no tempo</td>
+        <td>Representação digital direta da onda sonora; não pressupõe notas, instrumentos ou estruturas musicais.</td>
+        <td><div class="refs"><a class="ref" href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000001.shtml" target="_blank" rel="noopener noreferrer">WAVE specification ↗</a></div></td>
+      </tr>
+      <tr data-branch="2. Representação do sinal" data-key="2. representação do sinal stft / espectrograma século xx energia por tempo e frequência converte a onda em uma matriz tempo–frequência, tornando visíveis harmônicos, ataques, texturas e padrões espectrais.">
+        <td><span class="branch-label">2. Representação do sinal</span></td>
+        <td><strong>STFT / espectrograma</strong></td>
+        <td class="year">século XX</td>
+        <td>Energia por tempo e frequência</td>
+        <td>Converte a onda em uma matriz tempo–frequência, tornando visíveis harmônicos, ataques, texturas e padrões espectrais.</td>
+        <td><div class="refs"><a class="ref" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.stft.html" target="_blank" rel="noopener noreferrer">STFT — SciPy ↗</a></div></td>
+      </tr>
+      <tr data-branch="2. Representação do sinal" data-key="2. representação do sinal mel-espectrograma século xx bandas de frequência perceptualmente escaladas reduz e reorganiza o espectro segundo aproximações da percepção auditiva humana.">
+        <td><span class="branch-label">2. Representação do sinal</span></td>
+        <td><strong>Mel-espectrograma</strong></td>
+        <td class="year">século XX</td>
+        <td>Bandas de frequência perceptualmente escaladas</td>
+        <td>Reduz e reorganiza o espectro segundo aproximações da percepção auditiva humana.</td>
+        <td><div class="refs"><a class="ref" href="https://librosa.org/doc/main/generated/librosa.feature.melspectrogram.html" target="_blank" rel="noopener noreferrer">librosa melspectrogram ↗</a></div></td>
+      </tr>
+      <tr data-branch="2. Representação do sinal" data-key="2. representação do sinal mfcc 1980s coeficientes cepstrais descritor compacto de envelope espectral, muito usado em reconhecimento, classificação e mir.">
+        <td><span class="branch-label">2. Representação do sinal</span></td>
+        <td><strong>MFCC</strong></td>
+        <td class="year">1980s</td>
+        <td>Coeficientes cepstrais</td>
+        <td>Descritor compacto de envelope espectral, muito usado em reconhecimento, classificação e MIR.</td>
+        <td><div class="refs"><a class="ref" href="https://librosa.org/doc/main/generated/librosa.feature.mfcc.html" target="_blank" rel="noopener noreferrer">librosa MFCC ↗</a></div></td>
+      </tr>
+      <tr data-branch="2. Representação do sinal" data-key="2. representação do sinal mir — music information retrieval 1990s– descritores e atributos musicais campo que extrai, classifica e relaciona informação de áudio, partituras, metadados e comportamento de escuta.">
+        <td><span class="branch-label">2. Representação do sinal</span></td>
+        <td><strong>MIR — Music Information Retrieval</strong></td>
+        <td class="year">1990s–</td>
+        <td>Descritores e atributos musicais</td>
+        <td>Campo que extrai, classifica e relaciona informação de áudio, partituras, metadados e comportamento de escuta.</td>
+        <td><div class="refs"><a class="ref" href="https://ismir.net/" target="_blank" rel="noopener noreferrer">ISMIR ↗</a> <a class="ref" href="https://www.music-ir.org/mirex/wiki/MIREX_HOME" target="_blank" rel="noopener noreferrer">MIREX ↗</a></div></td>
+      </tr>
+      <tr data-branch="2. Representação do sinal" data-key="2. representação do sinal wavenet 2016 amostras de waveform autorregressivas demonstra geração neural diretamente na forma de onda por convoluções causais dilatadas.">
+        <td><span class="branch-label">2. Representação do sinal</span></td>
+        <td><strong>WaveNet</strong></td>
+        <td class="year">2016</td>
+        <td>Amostras de waveform autorregressivas</td>
+        <td>Demonstra geração neural diretamente na forma de onda por convoluções causais dilatadas.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/1609.03499" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://deepmind.google/discover/blog/wavenet-a-generative-model-for-raw-audio/" target="_blank" rel="noopener noreferrer">DeepMind ↗</a></div></td>
+      </tr>
+      <tr data-branch="2. Representação do sinal" data-key="2. representação do sinal gansynth 2019 representação espectral de magnitude e fase aplica gans à síntese de timbres musicais, operando sobre representações espectrais.">
+        <td><span class="branch-label">2. Representação do sinal</span></td>
+        <td><strong>GANSynth</strong></td>
+        <td class="year">2019</td>
+        <td>Representação espectral de magnitude e fase</td>
+        <td>Aplica GANs à síntese de timbres musicais, operando sobre representações espectrais.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/1902.08710" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://magenta.tensorflow.org/gansynth" target="_blank" rel="noopener noreferrer">Magenta ↗</a></div></td>
+      </tr>
+      <tr data-branch="2. Representação do sinal" data-key="2. representação do sinal melnet 2019 mel-espectrograma bidimensional modela dependências ao longo do tempo e da frequência em uma distribuição autoregressiva multidimensional.">
+        <td><span class="branch-label">2. Representação do sinal</span></td>
+        <td><strong>MelNet</strong></td>
+        <td class="year">2019</td>
+        <td>Mel-espectrograma bidimensional</td>
+        <td>Modela dependências ao longo do tempo e da frequência em uma distribuição autoregressiva multidimensional.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/1906.01083" target="_blank" rel="noopener noreferrer">Paper ↗</a></div></td>
+      </tr>
+      <tr data-branch="2. Representação do sinal" data-key="2. representação do sinal riffusion 2022 imagem de espectrograma adapta difusão de imagens para gerar espectrogramas condicionados por texto e convertê-los novamente em áudio.">
+        <td><span class="branch-label">2. Representação do sinal</span></td>
+        <td><strong>Riffusion</strong></td>
+        <td class="year">2022</td>
+        <td>Imagem de espectrograma</td>
+        <td>Adapta difusão de imagens para gerar espectrogramas condicionados por texto e convertê-los novamente em áudio.</td>
+        <td><div class="refs"><a class="ref" href="https://www.riffusion.com/about" target="_blank" rel="noopener noreferrer">Projeto ↗</a> <a class="ref" href="https://github.com/riffusion/riffusion" target="_blank" rel="noopener noreferrer">Código ↗</a></div></td>
+      </tr>
+      <tr data-branch="3. Representação latente" data-key="3. representação latente autoencoder / vae 2013– vetores contínuos latentes aprende uma codificação comprimida em vez de depender exclusivamente de descritores definidos manualmente.">
+        <td><span class="branch-label">3. Representação latente</span></td>
+        <td><strong>Autoencoder / VAE</strong></td>
+        <td class="year">2013–</td>
+        <td>Vetores contínuos latentes</td>
+        <td>Aprende uma codificação comprimida em vez de depender exclusivamente de descritores definidos manualmente.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/1312.6114" target="_blank" rel="noopener noreferrer">Auto-Encoding Variational Bayes ↗</a></div></td>
+      </tr>
+      <tr data-branch="3. Representação latente" data-key="3. representação latente vq-vae 2017 índices discretos de um codebook substitui vetores contínuos por entradas discretas aprendidas, preparando o caminho para tokens de áudio.">
+        <td><span class="branch-label">3. Representação latente</span></td>
+        <td><strong>VQ-VAE</strong></td>
+        <td class="year">2017</td>
+        <td>Índices discretos de um codebook</td>
+        <td>Substitui vetores contínuos por entradas discretas aprendidas, preparando o caminho para tokens de áudio.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/1711.00937" target="_blank" rel="noopener noreferrer">Paper ↗</a></div></td>
+      </tr>
+      <tr data-branch="3. Representação latente" data-key="3. representação latente jukebox 2020 códigos hierárquicos de áudio gera música com voz em áudio bruto por uma hierarquia de vq-vaes e transformers.">
+        <td><span class="branch-label">3. Representação latente</span></td>
+        <td><strong>Jukebox</strong></td>
+        <td class="year">2020</td>
+        <td>Códigos hierárquicos de áudio</td>
+        <td>Gera música com voz em áudio bruto por uma hierarquia de VQ-VAEs e Transformers.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2005.00341" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://openai.com/index/jukebox/" target="_blank" rel="noopener noreferrer">OpenAI ↗</a></div></td>
+      </tr>
+      <tr data-branch="3. Representação latente" data-key="3. representação latente clap 2022 embeddings conjuntos de áudio e texto alinha descrições textuais e eventos sonoros em um espaço contrastivo compartilhado.">
+        <td><span class="branch-label">3. Representação latente</span></td>
+        <td><strong>CLAP</strong></td>
+        <td class="year">2022</td>
+        <td>Embeddings conjuntos de áudio e texto</td>
+        <td>Alinha descrições textuais e eventos sonoros em um espaço contrastivo compartilhado.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2206.04769" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://github.com/LAION-AI/CLAP" target="_blank" rel="noopener noreferrer">Código ↗</a></div></td>
+      </tr>
+      <tr data-branch="3. Representação latente" data-key="3. representação latente mulan 2022 embeddings conjuntos de música e linguagem cria alinhamento contrastivo entre áudio musical e texto; é uma camada decisiva no condicionamento do musiclm.">
+        <td><span class="branch-label">3. Representação latente</span></td>
+        <td><strong>MuLan</strong></td>
+        <td class="year">2022</td>
+        <td>Embeddings conjuntos de música e linguagem</td>
+        <td>Cria alinhamento contrastivo entre áudio musical e texto; é uma camada decisiva no condicionamento do MusicLM.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2208.12415" target="_blank" rel="noopener noreferrer">Paper ↗</a></div></td>
+      </tr>
+      <tr data-branch="3. Representação latente" data-key="3. representação latente audioldm 2023 latente de mel-espectrograma + embedding textual executa difusão em um espaço latente associado ao espectrograma e usa alinhamento áudio–texto.">
+        <td><span class="branch-label">3. Representação latente</span></td>
+        <td><strong>AudioLDM</strong></td>
+        <td class="year">2023</td>
+        <td>Latente de mel-espectrograma + embedding textual</td>
+        <td>Executa difusão em um espaço latente associado ao espectrograma e usa alinhamento áudio–texto.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2301.12503" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://audioldm.github.io/" target="_blank" rel="noopener noreferrer">Projeto ↗</a></div></td>
+      </tr>
+      <tr data-branch="4. Codecs e tokens discretos" data-key="4. codecs e tokens discretos soundstream 2021 tokens rvq de codec neural codec neural ponta a ponta que transforma áudio em múltiplas sequências discretas por quantização vetorial residual.">
+        <td><span class="branch-label">4. Codecs e tokens discretos</span></td>
+        <td><strong>SoundStream</strong></td>
+        <td class="year">2021</td>
+        <td>Tokens RVQ de codec neural</td>
+        <td>Codec neural ponta a ponta que transforma áudio em múltiplas sequências discretas por quantização vetorial residual.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2107.03312" target="_blank" rel="noopener noreferrer">Paper ↗</a></div></td>
+      </tr>
+      <tr data-branch="4. Codecs e tokens discretos" data-key="4. codecs e tokens discretos encodec 2022 codebooks acústicos discretos codec neural de alta fidelidade usado como tokenizador em modelos de áudio e música.">
+        <td><span class="branch-label">4. Codecs e tokens discretos</span></td>
+        <td><strong>EnCodec</strong></td>
+        <td class="year">2022</td>
+        <td>Codebooks acústicos discretos</td>
+        <td>Codec neural de alta fidelidade usado como tokenizador em modelos de áudio e música.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2210.13438" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://github.com/facebookresearch/encodec" target="_blank" rel="noopener noreferrer">Código ↗</a></div></td>
+      </tr>
+      <tr data-branch="4. Codecs e tokens discretos" data-key="4. codecs e tokens discretos dac 2023 tokens acústicos de alta fidelidade codec neural aberto voltado a reconstrução de áudio de alta qualidade e uso em modelos generativos.">
+        <td><span class="branch-label">4. Codecs e tokens discretos</span></td>
+        <td><strong>DAC</strong></td>
+        <td class="year">2023</td>
+        <td>Tokens acústicos de alta fidelidade</td>
+        <td>Codec neural aberto voltado a reconstrução de áudio de alta qualidade e uso em modelos generativos.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2306.06546" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://github.com/descriptinc/descript-audio-codec" target="_blank" rel="noopener noreferrer">Código ↗</a></div></td>
+      </tr>
+      <tr data-branch="4. Codecs e tokens discretos" data-key="4. codecs e tokens discretos audiolm 2022 tokens semânticos + tokens acústicos formula geração de áudio como modelagem de linguagem, separando coerência de longo prazo e fidelidade acústica.">
+        <td><span class="branch-label">4. Codecs e tokens discretos</span></td>
+        <td><strong>AudioLM</strong></td>
+        <td class="year">2022</td>
+        <td>Tokens semânticos + tokens acústicos</td>
+        <td>Formula geração de áudio como modelagem de linguagem, separando coerência de longo prazo e fidelidade acústica.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2209.03143" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://google-research.github.io/seanet/audiolm/examples/" target="_blank" rel="noopener noreferrer">Exemplos ↗</a></div></td>
+      </tr>
+      <tr data-branch="4. Codecs e tokens discretos" data-key="4. codecs e tokens discretos bark 2023 tokens semânticos, coarse e fine modelo de texto para áudio da suno composto por três transformers hierárquicos e um decodificador de codec.">
+        <td><span class="branch-label">4. Codecs e tokens discretos</span></td>
+        <td><strong>Bark</strong></td>
+        <td class="year">2023</td>
+        <td>Tokens semânticos, coarse e fine</td>
+        <td>Modelo de texto para áudio da Suno composto por três Transformers hierárquicos e um decodificador de codec.</td>
+        <td><div class="refs"><a class="ref" href="https://github.com/suno-ai/bark" target="_blank" rel="noopener noreferrer">Código oficial ↗</a> <a class="ref" href="https://github.com/suno-ai/bark/blob/main/model-card.md" target="_blank" rel="noopener noreferrer">Model card ↗</a></div></td>
+      </tr>
+      <tr data-branch="5. Música como linguagem multimodal" data-key="5. música como linguagem multimodal musiclm 2023 texto/mulan → tokens semânticos → tokens acústicos estende audiolm com condicionamento textual e melódico para geração musical hierárquica.">
+        <td><span class="branch-label">5. Música como linguagem multimodal</span></td>
+        <td><strong>MusicLM</strong></td>
+        <td class="year">2023</td>
+        <td>Texto/MuLan → tokens semânticos → tokens acústicos</td>
+        <td>Estende AudioLM com condicionamento textual e melódico para geração musical hierárquica.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2301.11325" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://google-research.github.io/seanet/musiclm/examples/" target="_blank" rel="noopener noreferrer">Exemplos ↗</a></div></td>
+      </tr>
+      <tr data-branch="5. Música como linguagem multimodal" data-key="5. música como linguagem multimodal musicgen 2023 texto + tokens encodec modelo de linguagem musical de estágio único com condicionamento textual e, em variantes, melódico.">
+        <td><span class="branch-label">5. Música como linguagem multimodal</span></td>
+        <td><strong>MusicGen</strong></td>
+        <td class="year">2023</td>
+        <td>Texto + tokens EnCodec</td>
+        <td>Modelo de linguagem musical de estágio único com condicionamento textual e, em variantes, melódico.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2306.05284" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://github.com/facebookresearch/audiocraft" target="_blank" rel="noopener noreferrer">Código ↗</a> <a class="ref" href="https://huggingface.co/facebook/musicgen-large" target="_blank" rel="noopener noreferrer">Modelo ↗</a></div></td>
+      </tr>
+      <tr data-branch="5. Música como linguagem multimodal" data-key="5. música como linguagem multimodal audiogen 2022 texto + tokens acústicos geração de áudio ambiental condicionada por texto, antecedente direto da família audiocraft.">
+        <td><span class="branch-label">5. Música como linguagem multimodal</span></td>
+        <td><strong>AudioGen</strong></td>
+        <td class="year">2022</td>
+        <td>Texto + tokens acústicos</td>
+        <td>Geração de áudio ambiental condicionada por texto, antecedente direto da família AudioCraft.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2209.15352" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://github.com/facebookresearch/audiocraft" target="_blank" rel="noopener noreferrer">Código ↗</a></div></td>
+      </tr>
+      <tr data-branch="5. Música como linguagem multimodal" data-key="5. música como linguagem multimodal musiccaps 2023 pares música–descrição textual conjunto de dados criado para avaliação e alinhamento texto–música no trabalho do musiclm.">
+        <td><span class="branch-label">5. Música como linguagem multimodal</span></td>
+        <td><strong>MusicCaps</strong></td>
+        <td class="year">2023</td>
+        <td>Pares música–descrição textual</td>
+        <td>Conjunto de dados criado para avaliação e alinhamento texto–música no trabalho do MusicLM.</td>
+        <td><div class="refs"><a class="ref" href="https://www.kaggle.com/datasets/googleai/musiccaps" target="_blank" rel="noopener noreferrer">Dataset ↗</a> <a class="ref" href="https://arxiv.org/abs/2301.11325" target="_blank" rel="noopener noreferrer">Paper MusicLM ↗</a></div></td>
+      </tr>
+      <tr data-branch="6. Representação interacional" data-key="6. representação interacional prompt textual 2020s descritores de gênero, afeto, instrumentação e cena transforma linguagem natural em camada de controle; substitui parâmetros musicais explícitos por associações aprendidas.">
+        <td><span class="branch-label">6. Representação interacional</span></td>
+        <td><strong>Prompt textual</strong></td>
+        <td class="year">2020s</td>
+        <td>Descritores de gênero, afeto, instrumentação e cena</td>
+        <td>Transforma linguagem natural em camada de controle; substitui parâmetros musicais explícitos por associações aprendidas.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2301.11325" target="_blank" rel="noopener noreferrer">MusicLM ↗</a> <a class="ref" href="https://arxiv.org/abs/2306.05284" target="_blank" rel="noopener noreferrer">MusicGen ↗</a></div></td>
+      </tr>
+      <tr data-branch="6. Representação interacional" data-key="6. representação interacional suno — custom mode 2024– lyrics, style, título e controles de geração interface proprietária que externaliza categorias de controle sem revelar a arquitetura interna do sistema.">
+        <td><span class="branch-label">6. Representação interacional</span></td>
+        <td><strong>Suno — Custom Mode</strong></td>
+        <td class="year">2024–</td>
+        <td>Lyrics, Style, título e controles de geração</td>
+        <td>Interface proprietária que externaliza categorias de controle sem revelar a arquitetura interna do sistema.</td>
+        <td><div class="refs"><a class="ref" href="https://help.suno.com/" target="_blank" rel="noopener noreferrer">Suno Help Center ↗</a> <a class="ref" href="https://suno.com/" target="_blank" rel="noopener noreferrer">Suno ↗</a></div></td>
+      </tr>
+      <tr data-branch="6. Representação interacional" data-key="6. representação interacional udio 2024– prompt, letras, extensão, edição e remix plataforma proprietária de geração musical; sua interface pode ser tratada como documento técnico observável.">
+        <td><span class="branch-label">6. Representação interacional</span></td>
+        <td><strong>Udio</strong></td>
+        <td class="year">2024–</td>
+        <td>Prompt, letras, extensão, edição e remix</td>
+        <td>Plataforma proprietária de geração musical; sua interface pode ser tratada como documento técnico observável.</td>
+        <td><div class="refs"><a class="ref" href="https://www.udio.com/" target="_blank" rel="noopener noreferrer">Udio ↗</a> <a class="ref" href="https://help.udio.com/" target="_blank" rel="noopener noreferrer">Udio Help ↗</a></div></td>
+      </tr>
+      <tr data-branch="6. Representação interacional" data-key="6. representação interacional hugging face spaces 2020s modelo + demo + código + comunidade infraestrutura de circulação na qual representações técnicas se tornam interfaces remixáveis e experimentos públicos.">
+        <td><span class="branch-label">6. Representação interacional</span></td>
+        <td><strong>Hugging Face Spaces</strong></td>
+        <td class="year">2020s</td>
+        <td>Modelo + demo + código + comunidade</td>
+        <td>Infraestrutura de circulação na qual representações técnicas se tornam interfaces remixáveis e experimentos públicos.</td>
+        <td><div class="refs"><a class="ref" href="https://huggingface.co/spaces?category=music-generation" target="_blank" rel="noopener noreferrer">Music generation Spaces ↗</a> <a class="ref" href="https://huggingface.co/models?pipeline_tag=text-to-audio" target="_blank" rel="noopener noreferrer">Models — text-to-audio ↗</a></div></td>
+      </tr>
+      <tr data-branch="7. Codificação criativa transversal" data-key="7. codificação criativa transversal max/msp 1980s– patches, mensagens, objetos e sinais ambiente visual que articula eventos discretos, áudio em tempo real e interfaces experimentais.">
+        <td><span class="branch-label">7. Codificação criativa transversal</span></td>
+        <td><strong>Max/MSP</strong></td>
+        <td class="year">1980s–</td>
+        <td>Patches, mensagens, objetos e sinais</td>
+        <td>Ambiente visual que articula eventos discretos, áudio em tempo real e interfaces experimentais.</td>
+        <td><div class="refs"><a class="ref" href="https://docs.cycling74.com/max8" target="_blank" rel="noopener noreferrer">Documentação ↗</a></div></td>
+      </tr>
+      <tr data-branch="7. Codificação criativa transversal" data-key="7. codificação criativa transversal pure data 1996– patches de fluxo de dados ambiente aberto de programação visual para áudio, midi, síntese e interação.">
+        <td><span class="branch-label">7. Codificação criativa transversal</span></td>
+        <td><strong>Pure Data</strong></td>
+        <td class="year">1996–</td>
+        <td>Patches de fluxo de dados</td>
+        <td>Ambiente aberto de programação visual para áudio, MIDI, síntese e interação.</td>
+        <td><div class="refs"><a class="ref" href="https://puredata.info/" target="_blank" rel="noopener noreferrer">Projeto ↗</a></div></td>
+      </tr>
+      <tr data-branch="7. Codificação criativa transversal" data-key="7. codificação criativa transversal supercollider 1996– código, síntese e padrões linguagem e servidor de áudio que tornam algoritmos, síntese e temporalidade musical programáveis.">
+        <td><span class="branch-label">7. Codificação criativa transversal</span></td>
+        <td><strong>SuperCollider</strong></td>
+        <td class="year">1996–</td>
+        <td>Código, síntese e padrões</td>
+        <td>Linguagem e servidor de áudio que tornam algoritmos, síntese e temporalidade musical programáveis.</td>
+        <td><div class="refs"><a class="ref" href="https://docs.supercollider.online/" target="_blank" rel="noopener noreferrer">Documentação ↗</a></div></td>
+      </tr>
+      <tr data-branch="7. Codificação criativa transversal" data-key="7. codificação criativa transversal tidalcycles 2009– padrões temporais declarativos live coding baseado em padrões, ciclos e transformações de alto nível.">
+        <td><span class="branch-label">7. Codificação criativa transversal</span></td>
+        <td><strong>TidalCycles</strong></td>
+        <td class="year">2009–</td>
+        <td>Padrões temporais declarativos</td>
+        <td>Live coding baseado em padrões, ciclos e transformações de alto nível.</td>
+        <td><div class="refs"><a class="ref" href="https://tidalcycles.org/" target="_blank" rel="noopener noreferrer">Documentação ↗</a></div></td>
+      </tr>
+      <tr data-branch="7. Codificação criativa transversal" data-key="7. codificação criativa transversal sonic pi 2012– código musical ao vivo ambiente educacional e performático para síntese, samples, padrões e live coding.">
+        <td><span class="branch-label">7. Codificação criativa transversal</span></td>
+        <td><strong>Sonic Pi</strong></td>
+        <td class="year">2012–</td>
+        <td>Código musical ao vivo</td>
+        <td>Ambiente educacional e performático para síntese, samples, padrões e live coding.</td>
+        <td><div class="refs"><a class="ref" href="https://sonic-pi.net/" target="_blank" rel="noopener noreferrer">Projeto ↗</a></div></td>
+      </tr>
+      <tr data-branch="7. Codificação criativa transversal" data-key="7. codificação criativa transversal magenta.js 2018 modelos musicais em javascript leva modelos de aprendizado de máquina para interfaces web experimentais e práticas de codificação criativa.">
+        <td><span class="branch-label">7. Codificação criativa transversal</span></td>
+        <td><strong>Magenta.js</strong></td>
+        <td class="year">2018</td>
+        <td>Modelos musicais em JavaScript</td>
+        <td>Leva modelos de aprendizado de máquina para interfaces web experimentais e práticas de codificação criativa.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/1806.00195" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://github.com/magenta/magenta-js" target="_blank" rel="noopener noreferrer">Código ↗</a></div></td>
+      </tr>
+
+      <tr data-branch="3. Representação latente" data-key="3. representação latente stable audio open 2024 difusão em espaço latente de áudio modelo aberto de geração de áudio e música condicionado por texto, construído para pesquisa e experimentação local.">
+        <td><span class="branch-label">3. Representação latente</span></td>
+        <td><strong>Stable Audio Open</strong></td>
+        <td class="year">2024</td>
+        <td>Difusão em espaço latente de áudio</td>
+        <td>Modelo aberto de geração de áudio e música condicionado por texto, relevante para o ramo de difusão latente.</td>
+        <td><div class="refs"><a class="ref" href="https://huggingface.co/stabilityai/stable-audio-open-1.0" target="_blank" rel="noopener noreferrer">Modelo ↗</a> <a class="ref" href="https://github.com/Stability-AI/stable-audio-tools" target="_blank" rel="noopener noreferrer">Código ↗</a></div></td>
+      </tr>
+
+      <tr data-branch="8. Canção longa e modelos fundacionais" data-key="8. canção longa e modelos fundacionais yue 2025 canção completa letra voz acompanhamento modelo aberto autorregressivo para geração de canções longas condicionadas por gênero e letras.">
+        <td><span class="branch-label">8. Canção longa e modelos fundacionais</span></td>
+        <td><strong>YuE</strong></td>
+        <td class="year">2025</td>
+        <td>Letra + voz + acompanhamento em áudio tokenizado</td>
+        <td>Modelo aberto autorregressivo voltado à geração de canções completas e de longa duração.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2503.08638" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://github.com/multimodal-art-projection/YuE" target="_blank" rel="noopener noreferrer">Código ↗</a> <a class="ref" href="https://huggingface.co/m-a-p/YuE-s1-7B-anneal-en-cot" target="_blank" rel="noopener noreferrer">Modelo ↗</a></div></td>
+      </tr>
+
+      <tr data-branch="8. Canção longa e modelos fundacionais" data-key="8. canção longa e modelos fundacionais diffrhythm 2025 difusão flow matching letra para canção geração rápida de músicas completas condicionadas por letras e estilo.">
+        <td><span class="branch-label">8. Canção longa e modelos fundacionais</span></td>
+        <td><strong>DiffRhythm</strong></td>
+        <td class="year">2025</td>
+        <td>Difusão / flow matching condicionada por letra</td>
+        <td>Explora geração paralela de canções completas, buscando reduzir o custo da inferência autorregressiva.</td>
+        <td><div class="refs"><a class="ref" href="https://github.com/ASLP-lab/DiffRhythm" target="_blank" rel="noopener noreferrer">Código ↗</a> <a class="ref" href="https://huggingface.co/ASLP-lab/DiffRhythm-base" target="_blank" rel="noopener noreferrer">Modelo ↗</a></div></td>
+      </tr>
+
+      <tr data-branch="8. Canção longa e modelos fundacionais" data-key="8. canção longa e modelos fundacionais ace-step 2025 2026 diffusion transformer dit canção longa texto letra áudio modelo fundacional aberto de música com geração rápida, controle textual e edição.">
+        <td><span class="branch-label">8. Canção longa e modelos fundacionais</span></td>
+        <td><strong>ACE-Step / ACE-Step 1.5</strong></td>
+        <td class="year">2025–2026</td>
+        <td>Diffusion Transformer + condicionamentos musicais</td>
+        <td>Modelo fundacional aberto orientado a canção, geração rápida, edição e execução em hardware de consumo.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2506.00045" target="_blank" rel="noopener noreferrer">Paper ↗</a> <a class="ref" href="https://github.com/ace-step/ACE-Step" target="_blank" rel="noopener noreferrer">Código ↗</a> <a class="ref" href="https://huggingface.co/ACE-Step/Ace-Step1.5" target="_blank" rel="noopener noreferrer">ACE-Step 1.5 ↗</a></div></td>
+      </tr>
+
+      <tr data-branch="8. Canção longa e modelos fundacionais" data-key="8. canção longa e modelos fundacionais muse 2026 pipeline reprodutível dados licenciados sintéticos treinamento avaliação controle estrutural pesquisa aberta de música generativa.">
+        <td><span class="branch-label">8. Canção longa e modelos fundacionais</span></td>
+        <td><strong>Muse</strong></td>
+        <td class="year">2026</td>
+        <td>Pipeline integral de dados, treinamento e avaliação</td>
+        <td>Projeto orientado à reprodutibilidade, com atenção a dados licenciados ou sintéticos e controle estrutural.</td>
+        <td><div class="refs"><a class="ref" href="https://arxiv.org/abs/2601.03973" target="_blank" rel="noopener noreferrer">Paper ↗</a></div></td>
+      </tr>
+
+      <tr data-branch="9. Plataformas e geração em tempo real" data-key="9. plataformas e geração em tempo real suno chirp v2 v3 v4 v5 v5.5 studio plataforma proprietária canção completa prompt letra voz edição timeline.">
+        <td><span class="branch-label">9. Plataformas e geração em tempo real</span></td>
+        <td><strong>Suno — Chirp, V2–V5.5 e Studio</strong></td>
+        <td class="year">2023–2026</td>
+        <td>Prompt, letra, áudio de referência, perfil e edição</td>
+        <td>Continuidade pública de produto proprietária; a interface torna observáveis condicionamentos, mas não revela a arquitetura interna.</td>
+        <td><div class="refs"><a class="ref" href="https://suno.com/" target="_blank" rel="noopener noreferrer">Plataforma ↗</a> <a class="ref" href="https://help.suno.com/" target="_blank" rel="noopener noreferrer">Documentação ↗</a> <a class="ref" href="https://suno.com/blog" target="_blank" rel="noopener noreferrer">Blog ↗</a></div></td>
+      </tr>
+
+      <tr data-branch="9. Plataformas e geração em tempo real" data-key="9. plataformas e geração em tempo real lyria google deepmind lyria realtime 2024 2025 2026 geração musical interativa contínua texto áudio controle em tempo real.">
+        <td><span class="branch-label">9. Plataformas e geração em tempo real</span></td>
+        <td><strong>Lyria / Lyria RealTime</strong></td>
+        <td class="year">2024–2026</td>
+        <td>Texto, áudio e controles contínuos de performance</td>
+        <td>Linha do Google DeepMind que articula geração de faixas, canção e fluxo musical interativo em tempo real.</td>
+        <td><div class="refs"><a class="ref" href="https://deepmind.google/models/lyria/" target="_blank" rel="noopener noreferrer">Lyria ↗</a> <a class="ref" href="https://deepmind.google/models/lyria/lyria-realtime/" target="_blank" rel="noopener noreferrer">Lyria RealTime ↗</a></div></td>
+      </tr>
+
+      <tr data-branch="9. Plataformas e geração em tempo real" data-key="9. plataformas e geração em tempo real magenta realtime 2026 pesos abertos geração contínua performativa texto áudio modelo instrumento live coding.">
+        <td><span class="branch-label">9. Plataformas e geração em tempo real</span></td>
+        <td><strong>Magenta RealTime</strong></td>
+        <td class="year">2026</td>
+        <td>Fluxo musical contínuo condicionado por texto ou áudio</td>
+        <td>Reposiciona o legado Magenta na geração performativa e aproxima modelos fundacionais de instrumentos e live coding.</td>
+        <td><div class="refs"><a class="ref" href="https://huggingface.co/google/magenta-realtime" target="_blank" rel="noopener noreferrer">Modelo ↗</a> <a class="ref" href="https://magenta.withgoogle.com/" target="_blank" rel="noopener noreferrer">Magenta ↗</a></div></td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <aside class="note">
+    <strong>Nota metodológica.</strong>
+    Os itens do ramo “representação interacional” não revelam necessariamente a arquitetura
+    interna das plataformas. Nesses casos, a interface, a documentação pública e os comportamentos
+    observáveis funcionam como vestígios para uma arqueologia inferencial. Os links privilegiam
+    papers, documentação oficial, repositórios dos autores e páginas institucionais.
+  </aside>
+</main>
+
+<footer>
+  Mapa de pesquisa “Genealogia da IA Musical” · estado da arte: 5 de agosto de 2026. Arquivo autônomo: abra localmente em qualquer navegador.
+</footer>
+
+<script>
+const search = document.getElementById('search');
+const branch = document.getElementById('branch');
+const clear = document.getElementById('clear');
+const rows = [...document.querySelectorAll('tbody tr')];
+const visibleCount = document.getElementById('visibleCount');
+const branchCount = document.getElementById('branchCount');
+const linkCount = document.getElementById('linkCount');
+
+branchCount.textContent = new Set(rows.map(row => row.dataset.branch)).size;
+linkCount.textContent = document.querySelectorAll('a.ref').length;
+
+function filterRows() {
+  const q = search.value.trim().toLowerCase();
+  const b = branch.value;
+  let n = 0;
+  rows.forEach(row => {
+    const matchText = !q || row.dataset.key.includes(q);
+    const matchBranch = !b || row.dataset.branch === b;
+    const show = matchText && matchBranch;
+    row.classList.toggle('hidden', !show);
+    if (show) n++;
+  });
+  visibleCount.textContent = n;
+}
+search.addEventListener('input', filterRows);
+branch.addEventListener('change', filterRows);
+filterRows();
+clear.addEventListener('click', () => {
+  search.value = '';
+  branch.value = '';
+  filterRows();
+  search.focus();
+});
+</script>
+</body>
+</html>
